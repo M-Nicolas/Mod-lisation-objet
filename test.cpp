@@ -1,6 +1,13 @@
 Robot {
 	void avancer(int x, int y){
-		currentState.avancer(x, y, cx, cy);
+	
+	try{	
+		currentState.avancer();
+		Posiyion.setX(x);
+		}catch(){
+
+		}
+
 	}
 	void saisir(Obj o){
 		saisir(Objet, this);
@@ -15,7 +22,7 @@ current_state{
 		// vrai méthode
 		Rob.setObjet(Obj);
 	}
-	avancer(int,int,int,int){}
+	avancer(int,int,Pos){}
 };
 
 aVideFacePlot{
