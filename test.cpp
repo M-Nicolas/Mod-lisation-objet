@@ -1,34 +1,50 @@
-Robot {
-	void avancer(int x, int y){
+﻿class Robot {
+private :
+	Object object;
+	Position position;
 	
-	try{	
-		currentState.avancer();
-		Posiyion.setX(x);
-		}catch(){
+public:
+	void avancer(int x, int y){	
+		try{	
+			currentState.avancer();
+			Position.setX(x);
+		} catch(not_available_method_exception e) {
 
 		}
 
 	}
+
 	void saisir(Obj o){
-		saisir(Objet, this);
+		try{
+			saisir(Object, this);
+		} catch(not_available_method_exception e) {
+
+		}
 	}
 };
 
+class not_available_method_exception(){};
 
-current_state{
+//classe dont hériterons les différents états
+class current_state{
+public:
 	saisir(Obj, Rob){
+		throws not_available_method_exception();
 	}
+
 	v_saisir(Obj, Rob){
-		// vrai méthode
-		Rob.setObjet(Obj);
+		throws not_available_method_exception();
 	}
-	avancer(int,int,Pos){}
+
+	avancer(int,int,Pos){}	
 };
 
-aVideFacePlot{
+//TODO : modifier l'héritage pour qu'il corresponde à du C++
+class aVideFacePlot extends current_state{
 	saisir(Obj, Rob){
-		v_saisir(Obj, Rob);
+		// vrai méthode
+		Rob.setObject(Obj);
 	}
 };
 
-fige{};
+class fige extends current_state{};
