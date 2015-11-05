@@ -3,9 +3,9 @@
 //Méthode permettant au robot d'avancer : modifie ses parametres de Position
 void Robot::avancer(int x, int y){	
 	try{	
-		_currentState.avancer();
-		_x = x;
-		_y = y;
+		_current_state = _current_state.avancer();
+		_position.setX(x);
+		_position.setY(y);
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non autorisé
 	}
@@ -14,7 +14,7 @@ void Robot::avancer(int x, int y){
 // Méthode permettant au robot de tourner : modifie sa direction
 void Robot::tourner(String direction){
 	try{
-		_currentState.tourner();
+		_current_state = _current_state.tourner(_direction, direction);
 		_direction = direction;
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non autorisé
@@ -24,7 +24,7 @@ void Robot::tourner(String direction){
 //Méthode permettant au robot de saisir l'Objet se trouvant devant lui
 void Robot::saisir(Objet obj){
 	try{
-		_currentState.saisir();
+		_current_state = _current_state.saisir();
 		_obj = obj;
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
@@ -34,7 +34,7 @@ void Robot::saisir(Objet obj){
 // Méthode permettant au robot de poser l'objet qu'il tient
 void Robot::poser(){
 	try{
-		_currentState.poser();
+		_current_state = _current_state.poser();
 		_obj = Objet();
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
@@ -44,16 +44,42 @@ void Robot::poser(){
 // Méthode retournant le poids de l'Objet que tient le robot
 int Robot::peser(){
 	try{
-		_currentState.peser();
+		_current_state = _current_state.peser();
 		return _obj.getPoids();
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
 }
 
-void Robot::rencontrerPlot(){
+void Robot::rencontrerPlot(Plot plot){
 	try{
-		_currentState.rencontrerPlot();
+		_current_state = _current_state.rencontrerPlot();
+		_plot = plot;
+	} catch(not_available_method_exception e) {
+		//TODO : réaction en cas d'utilisation de méthode non authorisé
+	}	
+}
+
+int Robot::evaluerPlot(){
+	try{
+		_current_state = _current_state.evaluerPlot();
+		return _plot.getHauteur();
+	} catch(not_available_method_exception e) {
+		//TODO : réaction en cas d'utilisation de méthode non authorisé
+	}	
+}
+
+void Robot::figer(){
+	try{
+		_current_state = _current_state.figer();
+	} catch(not_available_method_exception e) {
+		//TODO : réaction en cas d'utilisation de méthode non authorisé
+	}	
+}
+
+void Robot::repartir(){
+	try{
+		_current_state = _current_state.repartir();
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
@@ -61,13 +87,13 @@ void Robot::rencontrerPlot(){
 
 // Getter retournant la position actuelle du robot
 Position Robot::get_position() {
-	return this->position;
+	return _position;
 }
 
 /* XXX corps d'une fonction basique
 (){
 	try{
-		_currentState.
+		_current_state = _current_state.
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
