@@ -2,10 +2,10 @@
 #include <String>
 using namespace std;
 
-#include "Position.h"
-#include "Plot.h"
-#include "Objet.h"
-#include "Current_state.h"
+#include "datas/Position.h"
+#include "datas/Plot.h"
+#include "datas/Objet.h"
+#include "states/Current_state.h"
 
 class Robot
 {
