@@ -1,19 +1,23 @@
-//classe dont hériterons les différents états
-class Current_state{
-public:
-	void saisir(Object obj, Robot rob){
-		throw not_available_method_exception();
-	}
-	void v_saisir(Object obj, Robot rob){
-		throw not_available_method_exception();
-	}
-	void avancer(int x, int y, Position pos,Robot rob){
-		throw not_available_method_exception();
-	}
-	void tourner(String direction) {
-		throw not_available_method_exception();
-	}
-	int evaluerPlot(Object obj) {
-		throw not_available_method_exception();
-	}
-};
+#include "Current_state.h"
+
+//definition des methodes de la classe Current_state
+
+//Methode permettant de saisir un objet
+void Current_state::saisir(Object obj, Robot rob){
+	throw not_available_method_exception();
+}
+
+//Methode permettant de faire avancer le Robot d'x sur l'axe des x et d'y syr l'axe des y, en modifiant la Position pos
+void avancer(int x, int y, Position pos,Robot rob){
+	throw not_available_method_exception();
+}
+
+//Methode permettant de tourner le robot dans la direction donnée
+void tourner(String direction) {
+	throw not_available_method_exception();
+}
+
+////Methode permettant d'evaluer la hauteur de l'objet donné
+int evaluerPlot(Object obj) {
+	throw not_available_method_exception();
+}
