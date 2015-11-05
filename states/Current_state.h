@@ -10,3 +10,6 @@ public:
 	Current_state poser();
 	Current_state rencontrerPlot();
 };
+
+//Exception retournée quand le robot ne peux faire une action dans un étât donné
+class not_available_method_exception(){};
