@@ -3,8 +3,6 @@
 #include "EnChargeFacePlot.h"
 #include "aVide.h"
 
-aVideFacePlot::aVideFacePlot(Current_state previous_state) : _previous_state(previous_state){};
-
 Current_state aVideFacePlot::saisir(){
 	return new EnChargeFacePlot(this);
 }

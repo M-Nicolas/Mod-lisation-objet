@@ -2,8 +2,6 @@
 #include "aVide.h"
 #include "aVideFacePlot.h"
 
-aVide::aVide(Current_state previous_state) : _previous_state(previous_state);
-
 Current_state aVide::avancer(){
 	return this;
 }

@@ -2,8 +2,6 @@
 #include "EnChargeFacePlot.h"
 #include "Current_state.h"
 
-EnCharge(Current_state previous_state) : _previous_state(previous_state) {};
-
 Current_state avancer(){
 	return this;
 }
