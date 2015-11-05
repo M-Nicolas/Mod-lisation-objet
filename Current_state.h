@@ -4,5 +4,6 @@ public:
 	void saisir(Object obj, Robot rob);
 	void avancer(int x, int y, Position pos,Robot rob);
 	void tourner(String direction);
+	void repartir();
 	int evaluerPlot(Object obj);
 };
