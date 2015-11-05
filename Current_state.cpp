@@ -2,6 +2,10 @@
 
 //definition des methodes de la classe Current_state
 
+
+//Constructeur de la classe Current_state
+Current_state::Current_state(Current_state previous_state) : _previous_state(previous_state) {};
+
 //Methode permettant de saisir un objet
 Current_state Current_state::saisir(){
 	throw not_available_method_exception();
@@ -26,3 +30,4 @@ Current_state Current_state::repartir() {
 Current_state Current_state::evaluerPlot() {
 	throw not_available_method_exception();
 }
+
