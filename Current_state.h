@@ -1,9 +1,11 @@
 //Classe Current_state dont hériterons tout les Etats
 class Current_state{
+private:
+	Current_state previous_state;
 public:
-	void saisir(Object obj, Robot rob);
-	void avancer(int x, int y, Position pos,Robot rob);
-	void tourner(String direction);
-	void repartir();
-	int evaluerPlot(Object obj);
+	Current_state saisir();
+	Current_state avancer();
+	Current_state tourner(String directionInitiale, String nvelleDirection);
+	Current_state repartir();
+	Current_state evaluerPlot();
 };

@@ -1,19 +1,16 @@
 #include "aVideFacePlot.h"
 
-void aVideFacePlot::saisir(Object obj, Robot rob){
-	rob.setObject(obj);
+Current_state aVideFacePlot::saisir(){
+	return new EnChargeFacePlot(this);
 }
 
-void aVideFacePlot::tourner(String direction, Robot rob) {
-	switch {
-		case "N" : rob.setDirection("N");
-		case "E" : rob.setDirection("E");
-		case "S" : rob.setDirection("S");
-		case "W" : rob.setDirection("W");
-		default : throw bad_direction_exception();
-	}
+Current_state aVideFacePlot::tourner(String directionInitiale, String nvelledirection) {
+	if (directionInitiale <> nvelledirection)
+		return new aVide(this);
+	else
+		return new aVideFacePlot(this);
 }
 
-int aVideFacePlot::evaluerPlot(Object obj) {
-	return obj.getHauteur();
+Current_state aVideFacePlot::evaluerPlot(Object obj) {
+	return this;
 }
