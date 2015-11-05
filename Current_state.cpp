@@ -8,21 +8,21 @@ Current_state Current_state::saisir(){
 }
 
 //Methode permettant de faire avancer le Robot d'x sur l'axe des x et d'y syr l'axe des y, en modifiant la Position pos
-Current_state avancer(){
+Current_state Current_state::avancer(){
 	throw not_available_method_exception();
 }
 
 //Methode permettant de tourner le robot dans la direction donnée
-Current_state tourner(String directionInitiale, String nvelleDirection) {
+Current_state Current_state::tourner(String directionInitiale, String nvelleDirection) {
 	throw not_available_method_exception();
 }
 
 //Methode qui permet au robot de repartir lorsqu'il est fige
-Current_state repartir() {
+Current_state Current_state::repartir() {
 	throw not_available_method_exception();
 }
 
 ////Methode permettant d'evaluer la hauteur de l'objet donné
-Current_state evaluerPlot() {
+Current_state Current_state::evaluerPlot() {
 	throw not_available_method_exception();
 }

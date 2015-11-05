@@ -8,4 +8,5 @@ public:
 	Current_state tourner(String directionInitiale, String nvelleDirection);
 	Current_state repartir();
 	Current_state evaluerPlot();
+	Current_state();
 };
