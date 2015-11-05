@@ -1,4 +1,9 @@
+#include "Robot.h"
+
 //classe du Robot 						XXX aucun changement d'état n'est fait.
+Robot::Robot()
+: _direction('N'), _position(), _plot(), _obj(), _currentState() 
+{}
 
 //Méthode permettant au robot d'avancer : modifie ses parametres de Position
 void Robot::avancer(int x, int y){	
@@ -51,6 +56,7 @@ int Robot::peser(){
 	}	
 }
 
+// Méthode permettant au Robot de découvrir le Plot plot
 void Robot::rencontrerPlot(Plot plot){
 	try{
 		_current_state = _current_state.rencontrerPlot();
@@ -60,6 +66,7 @@ void Robot::rencontrerPlot(Plot plot){
 	}	
 }
 
+// Méthode premettant de mesurer la hauteur du plot rencontrer prècèdement
 int Robot::evaluerPlot(){
 	try{
 		_current_state = _current_state.evaluerPlot();
@@ -69,6 +76,7 @@ int Robot::evaluerPlot(){
 	}	
 }
 
+// méthode permettant de mettre en pause le robot
 void Robot::figer(){
 	try{
 		_current_state = _current_state.figer();
@@ -77,6 +85,7 @@ void Robot::figer(){
 	}	
 }
 
+// méthode permettant au robot figé de repartir
 void Robot::repartir(){
 	try{
 		_current_state = _current_state.repartir();
@@ -85,10 +94,10 @@ void Robot::repartir(){
 	}	
 }
 
-// Getter retournant la position actuelle du robot
-Position Robot::get_position() {
-	return _position;
-}
+// Getter retournant la position actuelle du robot XXX en a t'on besoin ?
+// Position Robot::get_position() {
+// 	return _position;
+// }
 
 /* XXX corps d'une fonction basique
 (){
