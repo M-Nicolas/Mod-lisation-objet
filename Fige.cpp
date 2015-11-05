@@ -1,4 +1,5 @@
 #import "Fige.h"
+#import "Current_state.h"
 
 Fige::Fige(Current_state previous_state) : _previous_state(previous_state) {};
 

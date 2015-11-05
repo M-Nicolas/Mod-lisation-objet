@@ -1,4 +1,6 @@
+#include "Current_state.h"
 #include "aVide.h"
+#include "aVideFacePlot.h"
 
 aVide::aVide(Current_state previous_state) : _previous_state(previous_state);
 

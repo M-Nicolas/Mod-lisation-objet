@@ -1,4 +1,7 @@
+#include "Current_state.h"
 #include "aVideFacePlot.h"
+#include "EnChargeFacePlot.h"
+#include "aVide.h"
 
 aVideFacePlot::aVideFacePlot(Current_state previous_state) : _previous_state(previous_state){};
 
@@ -10,7 +13,7 @@ Current_state aVideFacePlot::tourner(String directionInitiale, String nvelledire
 	if (directionInitiale <> nvelledirection)
 		return new aVide(this);
 	else
-		return new aVideFacePlot(this);
+		return this;
 }
 
 Current_state aVideFacePlot::evaluerPlot(Object obj) {
