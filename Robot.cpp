@@ -94,6 +94,10 @@ void Robot::repartir(){
 	}	
 }
 
+void Robot::afficher(){
+	// TODO XXX
+}
+
 // Getter retournant la position actuelle du robot XXX en a t'on besoin ?
 // Position Robot::get_position() {
 // 	return _position;

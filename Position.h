@@ -1,3 +1,6 @@
+/*
+Décrit une position sur un plan 
+ */
 class Position
 {
 private:
@@ -5,7 +8,7 @@ private:
 	int _y;
 
 public:
-	Position(arguments);
+	Position(int = 0, int = 0);
 	~Position();
 
 	void setX(int);
@@ -13,5 +16,4 @@ public:
 
 	int getX();
 	int getY();
-	/* data */
 };
