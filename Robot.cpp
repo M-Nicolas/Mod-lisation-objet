@@ -1,6 +1,6 @@
 #include "Robot.h"
 
-//classe du Robot 						XXX aucun changement d'état n'est fait.
+//classe du Robot 
 Robot::Robot()
 : _direction('N'), _position(), _plot(), _obj(), _currentState() 
 {}
