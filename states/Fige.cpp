@@ -1,17 +1,7 @@
 #import "Fige.h"
 #import "Current_state.h"
 
-Fige::Fige (Current_state previous_state): _previous_state(previous_state) {
-	cout<<"Creation"<<endl;
-}
-
-Fige::~Fige() {
-	cout<<"Destruction"<<endl;
-}
-
-Fige Fige::Instance() {
-	return m_instance;
-}
+Fige::Fige(Current_state previous_state) : _previous_state(previous_state) {};
 
 //Methode permettant de relancer le robot lorsqu'il est fige
 Current_state Fige::repartir() {

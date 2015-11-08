@@ -2,18 +2,6 @@
 #include "aVide.h"
 #include "aVideFacePlot.h"
 
-aVide::aVide() {
-	cout<<"Creation"<<endl;
-}
-
-aVide::~aVide() {
-	cout<<"Destruction"<<endl;
-}
-
-aVide aVide::Instance() {
-	return m_instance;
-}
-
 Current_state aVide::avancer(){
 	return this;
 }
