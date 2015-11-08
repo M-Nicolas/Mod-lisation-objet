@@ -3,6 +3,18 @@
 #include "EnChargeFacePlot.h"
 #include "aVide.h"
 
+aVideFacePlot::aVideFacePlot() {
+	cout<<"Creation"<<endl;
+}
+
+aVideFacePlot::~aVideFacePlot() {
+	cout<<"Destruction"<<endl;
+}
+
+aVideFacePlot aVideFacePlot::Instance() {
+	return m_instance;
+}
+
 Current_state aVideFacePlot::saisir(){
 	return new EnChargeFacePlot(this);
 }
