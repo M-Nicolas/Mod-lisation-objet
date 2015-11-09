@@ -1,31 +1,35 @@
 #include "Current_state.h"
-#include "aVideFacePlot.h"
+#include "AVideFacePlot.h"
 #include "EnChargeFacePlot.h"
-#include "aVide.h"
+#include "AVide.h"
 
-aVideFacePlot::aVideFacePlot() {
+AVideFacePlot::AVideFacePlot() {
 	cout<<"Creation"<<endl;
 }
 
-aVideFacePlot::~aVideFacePlot() {
+AVideFacePlot::~AVideFacePlot() {
 	cout<<"Destruction"<<endl;
 }
 
-aVideFacePlot aVideFacePlot::Instance() {
+AVideFacePlot AVideFacePlot::Instance() {
+	if (m_instance == NULL) {
+		m_instance = new AVideFacePlot();
+	}
+
 	return m_instance;
 }
 
-Current_state aVideFacePlot::saisir(){
-	return new EnChargeFacePlot(this);
+Current_state AVideFacePlot::saisir(){
+	return EnChargeFacePlot.Instance();
 }
 
-Current_state aVideFacePlot::tourner(String directionInitiale, String nvelledirection) {
+Current_state AVideFacePlot::tourner(String directionInitiale, String nvelledirection) {
 	if (directionInitiale <> nvelledirection)
-		return new aVide(this);
+		return Avide.Instance();
 	else
 		return this;
 }
 
-Current_state aVideFacePlot::evaluerPlot(Object obj) {
+Current_state AVideFacePlot::evaluerPlot(Object obj) {
 	return this;
 }

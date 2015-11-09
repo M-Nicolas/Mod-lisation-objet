@@ -1,27 +1,30 @@
 #include "Current_state.h"
-#include "aVide.h"
-#include "aVideFacePlot.h"
+#include "AVide.h"
+#include "AVideFacePlot.h"
 
-aVide::aVide() {
+AVide::AVide() {
 	cout<<"Creation"<<endl;
 }
 
-aVide::~aVide() {
+AVide::~AVide() {
 	cout<<"Destruction"<<endl;
 }
 
-aVide aVide::Instance() {
+AVide AVide::Instance() {
+	if (m_instance == NULL)
+		m_instance = new AVide();
+
 	return m_instance;
 }
 
-Current_state aVide::avancer(){
+Current_state AVide::avancer(){
 	return this;
 }
 
-Current_state aVide::tourner(String directionInitiale, String nvelledirection) {
+Current_state AVide::tourner(String directionInitiale, String nvelledirection) {
 	return this;
 }
 
-Current_state aVide::rencontrerPlot() {
-	return new aVideFacePlot(this);
+Current_state AVide::rencontrerPlot() {
+	return AVideFacePlot.Instance();
 }

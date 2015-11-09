@@ -11,6 +11,9 @@ EnCharge::~EnCharge() {
 }
 
 EnCharge EnCharge::Instance() {
+	if (m_instance = NULL)
+		m_instance = new EnCharge();
+	
 	return m_instance;
 }
 
@@ -23,7 +26,7 @@ Current_state EnCharge::tourner(String directionInitiale, String nvelleDirection
 }
 
 Current_state EnCharge::rencontrerPlot(){
-	return new EnChargeFacePlot(this);
+	return EnChargeFacePlot.Instance();
 }
 
 Current_state EnCharge::peser(){
