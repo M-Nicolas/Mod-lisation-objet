@@ -1,6 +1,6 @@
 #include "Current_state.h"
 #include "EnChargeFacePlot.h"
-#include "aVideFacePlot.h"
+#include "AVideFacePlot.h"
 #include "EnCharge.h"
 
 EnChargeFacePlot::EnChargeFacePlot() {
@@ -12,16 +12,19 @@ EnChargeFacePlot::~EnChargeFacePlot() {
 }
 
 Fige EnChargeFacePlot::Instance() {
+	if (m_instance == NULL)
+		m_instance = new EnChargeFacePlot();
+
 	return m_instance;
 }
 
 Current_state EnChargeFacePlot::poser() {
-	return new aVideFacePlot(this);
+	return AVideFacePlot.Instance();
 }
 
 Current_state EnChargeFacePlot::tourner(String directionInitiale, String nvelleDirection){
 	if (directionInitiale <> nvelleDirection)
-		return new EnCharge(this);
+		return EnCharge.Instance();
 	else
 		return this;
 }

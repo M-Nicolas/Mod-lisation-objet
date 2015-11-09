@@ -10,6 +10,9 @@ Fige::~Fige() {
 }
 
 Fige Fige::Instance() {
+	if (m_instance == NULL)
+		m_instance = new Fige();
+	
 	return m_instance;
 }
 
