@@ -20,12 +20,12 @@ AVideFacePlot AVideFacePlot::Instance() {
 }
 
 Current_state AVideFacePlot::saisir(){
-	return EnChargeFacePlot.Instance();
+	return EnChargeFacePlot::Instance();
 }
 
 Current_state AVideFacePlot::tourner(String directionInitiale, String nvelledirection) {
 	if (directionInitiale <> nvelledirection)
-		return Avide.Instance();
+		return Avide::Instance();
 	else
 		return this;
 }

@@ -26,7 +26,7 @@ Current_state EnCharge::tourner(String directionInitiale, String nvelleDirection
 }
 
 Current_state EnCharge::rencontrerPlot(){
-	return EnChargeFacePlot.Instance();
+	return EnChargeFacePlot::Instance();
 }
 
 Current_state EnCharge::peser(){

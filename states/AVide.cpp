@@ -26,5 +26,5 @@ Current_state AVide::tourner(String directionInitiale, String nvelledirection) {
 }
 
 Current_state AVide::rencontrerPlot() {
-	return AVideFacePlot.Instance();
+	return AVideFacePlot::Instance();
 }

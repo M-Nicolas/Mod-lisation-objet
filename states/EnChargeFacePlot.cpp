@@ -19,12 +19,12 @@ Fige EnChargeFacePlot::Instance() {
 }
 
 Current_state EnChargeFacePlot::poser() {
-	return AVideFacePlot.Instance();
+	return AVideFacePlot::Instance();
 }
 
 Current_state EnChargeFacePlot::tourner(String directionInitiale, String nvelleDirection){
 	if (directionInitiale <> nvelleDirection)
-		return EnCharge.Instance();
+		return EnCharge::Instance();
 	else
 		return this;
 }
