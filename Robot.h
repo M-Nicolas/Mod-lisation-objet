@@ -1,5 +1,6 @@
 #include <iostream>
 #include <String>
+#include <vector>
 using namespace std;
 
 #include "datas/Position.h"
@@ -14,7 +15,8 @@ private:
 	Position _position;
 	Plot _plot;
 	Objet _obj;
-	Current_state _currentState;
+	Current_state _current_state;
+	vector<Data> _data;
 
 public:
 	Robot();

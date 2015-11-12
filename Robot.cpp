@@ -2,8 +2,8 @@
 
 //classe du Robot 
 Robot::Robot()
-: _direction('N'), _position(), _plot(), _obj(), _currentState() 
-{}
+: _direction('N'), _position(), _plot(), _obj(), _current_state(), _data();
+
 
 //Méthode permettant au robot d'avancer : modifie ses parametres de Position
 void Robot::avancer(int x, int y){	
@@ -14,6 +14,7 @@ void Robot::avancer(int x, int y){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non autorisé
 	}
+	_data.push_back(Data("avancer de " + x + ", " + y, _direction, _position, _plot, _obj, _current_state));
 }
 
 // Méthode permettant au robot de tourner : modifie sa direction
@@ -24,6 +25,7 @@ void Robot::tourner(String direction){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non autorisé
 	}
+	_data.push_back(Data("tourner a " + direction, _direction, _position, _plot, _obj, _current_state));	
 }
 
 //Méthode permettant au robot de saisir l'Objet se trouvant devant lui
@@ -34,6 +36,7 @@ void Robot::saisir(Objet obj){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}
+	_data.push_back(Data("saisir", _direction, _position, _plot, _obj, _current_state));
 }
 
 // Méthode permettant au robot de poser l'objet qu'il tient
@@ -44,6 +47,7 @@ void Robot::poser(){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}
+	_data.push_back(Data("poser ", _direction, _position, _plot, _obj, _current_state));	
 }
 
 // Méthode retournant le poids de l'Objet que tient le robot
@@ -54,6 +58,7 @@ int Robot::peser(){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
+	_data.push_back(Data("peser", _direction, _position, _plot, _obj, _current_state));
 }
 
 // Méthode permettant au Robot de découvrir le Plot plot
@@ -64,6 +69,7 @@ void Robot::rencontrerPlot(Plot plot){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
+	_data.push_back(Data("rencontrerPlot", _direction, _position, _plot, _obj, _current_state));	
 }
 
 // Méthode premettant de mesurer la hauteur du plot rencontrer prècèdement
@@ -74,6 +80,7 @@ int Robot::evaluerPlot(){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
+	_data.push_back(Data("evaluerPlot", _direction, _position, _plot, _obj, _current_state));	
 }
 
 // méthode permettant de mettre en pause le robot
@@ -83,6 +90,7 @@ void Robot::figer(){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
+	_data.push_back(Data("figer", _direction, _position, _plot, _obj, _current_state));
 }
 
 // méthode permettant au robot figé de repartir
@@ -92,10 +100,14 @@ void Robot::repartir(){
 	} catch(not_available_method_exception e) {
 		//TODO : réaction en cas d'utilisation de méthode non authorisé
 	}	
+	_data.push_back(Data("repartir", _direction, _position, _plot, _obj, _current_state));
 }
 
 void Robot::afficher(){
-	// TODO XXX
+	int stop = _data.size();
+	for (int i = 0; i < stop; ++i){
+		cout << _data[i];
+	}
 }
 
 // Getter retournant la position actuelle du robot XXX en a t'on besoin ?

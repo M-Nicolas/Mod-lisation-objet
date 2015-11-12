@@ -17,7 +17,7 @@ private:
 	Position _position;
 	Plot _plot;
 	Objet _obj;
-	Current_state _currentState;
+	Current_state _current_state;
 
 public:
 	Data(string, string, Position, Plot, Objet, Current_state);
