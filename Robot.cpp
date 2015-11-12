@@ -2,7 +2,9 @@
 
 //classe du Robot 
 Robot::Robot()
-: _direction('N'), _position(), _plot(), _obj(), _current_state(), _data();
+: _direction('N'), _position(), _plot(), _obj(), _current_state(), _data(){
+	_data.push_back(Data("initial", _direction, _position, _plot, _obj, _current_state));
+}
 
 
 //Méthode permettant au robot d'avancer : modifie ses parametres de Position
@@ -110,11 +112,56 @@ void Robot::afficher(){
 	}
 }
 
-// Getter retournant la position actuelle du robot XXX en a t'on besoin ?
-// Position Robot::get_position() {
-// 	return _position;
-// }
+void agit(){
+	afficher();
+	string command; string direction; char c;int x; int y;
+	cout << "que voulez-vous faire ? " ;
+	while(cin >> command ){
+		case "avancer": 
+			cout << " de quel x y ? " << endl;
+			if(cin >> x >> c >>y)
+				avancer(x, y);
+			break;
+		case "tourner": 
+			cout << " quelle direction ?" <<endl;
+			if (cin >> direction)
+				tourner(direction);
+			break;
+		case "saisir": 
+			saisir(Objet(10));
+			break;
+		case "poser": 
+			poser();
+			break;
+		case "peser": 
+			cout << "l'objet pese " << peser() << endl;
+			break;
+		case "rencontrerPlot": 
+			rencontrerPlot(Plot(75));
+			break;
+		case "evaluerPlot": 
+			cout << "le plot mesure " << evaluerPlot() << endl;
+			break;
+		case "figer": 
+			figer();
+			break;
+		case "repartir": 
+			repartir();
+			break;
+		case "afficher":
+			afficher();
+			break;
+		default:
+			cout << "actions possibles: \n avancer" << " tourner" << " saisir"
+				<< " poser" << " peser" << " rencontrerPlot" << " evaluerPlot"
+				<< " figer" << " repartir" << "afficher" << endl;
+	}
+}
 
+int main(int argc, char const *argv[]) {
+	agit();
+	return 0;
+}
 /* XXX corps d'une fonction basique
 (){
 	try{
