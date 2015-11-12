@@ -1,4 +1,4 @@
-Plot::Plot(int hauteur)
+Plot::Plot(int hauteur = 0)
 : _hauteur(hauteur)
 {}
 
