@@ -1,4 +1,7 @@
+#include <iostream>
+
 #include "Current_state.h"
+#include "EnRoute.h"
 
 //definition des methodes de la classe Current_state
 

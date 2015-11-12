@@ -9,10 +9,6 @@ public:
 	Current_state peser();
 	Current_state poser();
 	Current_state rencontrerPlot();
-	ostream& operator<<(osteam& is) {
-		return is << "Current_state";
-	}
-
 };
 
 //Exception retournée quand le robot ne peux faire une action dans un étât donné

@@ -1,7 +1,10 @@
+#include <iostream>
+
 #include "Current_state.h"
 #include "AVideFacePlot.h"
 #include "EnChargeFacePlot.h"
 #include "AVide.h"
+#include "EnRoute.h"
 
 AVideFacePlot::AVideFacePlot() {
 	cout<<"Creation"<<endl;
