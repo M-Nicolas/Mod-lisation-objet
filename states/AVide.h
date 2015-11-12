@@ -15,6 +15,10 @@ public:
 	Current_state avancer();
 	Current_state tourner(String directionInitiale, String nvelledirection);
 	Current_state rencontrerPlot();
+	ostream& operator<<(osteam& is) {
+		return is << "AVide";
+	}
+
 };
 
 #endif

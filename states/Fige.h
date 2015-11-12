@@ -13,6 +13,9 @@ private:
 public:
 	static Fige& Instance();
 	Current_state repartir();
+	ostream& operator<<(osteam& is) {
+		return  is << "Fige";
+	}
 };
 
 #endif

@@ -15,6 +15,9 @@ public:
 	Current_state saisir();
 	Current_state tourner(String directionInitiale, String nvelleDirection);
 	Current_state evaluerPlot();
+	ostream& operator<<(osteam& is) {
+		return is << "AVideFacePlot";
+	}
 };
 
 #endif

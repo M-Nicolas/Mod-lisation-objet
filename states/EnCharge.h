@@ -16,6 +16,10 @@ public:
 	Current_state tourner(String directionInitiale, String nvelleDirection);
 	Current_state rencontrerPlot();
 	Current_state peser();
+	ostream& operator<<(osteam& is) {
+		return is << "EnCharge";
+	}
+
 };
 
 #endif
