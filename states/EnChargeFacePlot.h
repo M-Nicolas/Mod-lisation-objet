@@ -1,10 +1,13 @@
 #ifndef SINGLETON_H
 #define SINGLETON_H
 
+#include <iostream>
+
 #include "Current_state.h"
+#include "EnRoute.h"
 
 //Classe EnChargeFacePlot qui correspont à l'etat du Robot lorsqu'il porte un objet et qu'il se trouve face à un Plot
-class EnChargeFacePlot : public Current_state {
+class EnChargeFacePlot : public EnRoute {
 private:
 	static EnChargeFacePlot m_instance;
 	EnChargeFacePlot();
