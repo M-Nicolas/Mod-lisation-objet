@@ -19,6 +19,10 @@ public:
 
 	//Exception retournée quand le robot ne peux faire une action dans un étât donné
 	class not_available_method_exception{};
+
+	friend ostream& operator<<(ostream& is, Current_state& cs){
+		return is;
+	}
 };
 
 #endif

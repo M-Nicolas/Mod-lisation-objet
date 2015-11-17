@@ -9,10 +9,10 @@ using namespace std;
 
 class ObsAfficheurRobot : public ObsAfficheur {
 private:
-	Robot _robot;
+	Robot* _robot;
 
 public:
-	ObsAfficheurRobot(Robot);
+	ObsAfficheurRobot(Robot*);
 
 	void Afficher(string);
 };

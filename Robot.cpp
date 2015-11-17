@@ -1,4 +1,5 @@
 #include "Robot.h"
+#include "afficheurs/ObsAfficheurRobot.h"
 
 //classe du Robot 
 Robot::Robot()
@@ -95,6 +96,7 @@ void Robot::repartir(){
 }
 
 void Robot::agit(){
+	int obs = AfficheursRobot::rajouter(ObsAfficheurRobot(this));
 	string command; string direction; char c;int x; int y;
 	cout << "que voulez-vous faire ? " ;
 	while(cin >> command ){
@@ -127,6 +129,7 @@ void Robot::agit(){
 		}
 		AfficheursRobot::notifiers(command);
 	}
+	AfficheursRobot::enlever(obs);
 }
 
 int main(int argc, char const *argv[]) {
