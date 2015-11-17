@@ -30,7 +30,8 @@ public:
 	int evaluerPlot();
 	void figer();
 	void repartir();
-
+	
+	void agit()
 
 	String get_direction(){
 		return _direction;
