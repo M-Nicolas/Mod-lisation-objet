@@ -16,7 +16,6 @@ private:
 	Plot _plot;
 	Objet _obj;
 	Current_state _current_state;
-	vector<Data> _data;
 
 public:
 	Robot();
@@ -31,4 +30,21 @@ public:
 	int evaluerPlot();
 	void figer();
 	void repartir();
+
+
+	String get_direction(){
+		return _direction;
+	}
+	Position get_position(){
+		return _position;
+	}
+	Plot get_plot(){
+		return _plot;
+	}
+	Objet get_objet(){
+		return _obj;
+	}
+	Current_state get_current_state(){
+		return _current_state;
+	}
 };
