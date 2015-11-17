@@ -1,3 +1,6 @@
+#ifndef _PLOT_
+#define _PLOT_
+
 class Plot
 {
 private:
@@ -7,3 +10,5 @@ public:
 
 	int getHauteur();
 };
+
+#endif

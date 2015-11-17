@@ -1,3 +1,6 @@
+#ifndef _POSITION_
+#define _POSITION_
+
 /*
 Décrit une position sur un plan 
  */
@@ -17,3 +20,5 @@ public:
 	int getX();
 	int getY();
 };
+
+#endif

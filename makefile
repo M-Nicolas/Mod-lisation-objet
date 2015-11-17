@@ -19,7 +19,7 @@ datas/%.o:	%.cpp
 states/%.o:	%.cpp
 	$(CXX_COMPILE) -c $*.cpp		
 
-Robot: Robot.o AfficheursRobot.o datas/Position.o datas/Plot.o datas/Objet.o states/Current_state.o
+Robot: Robot.o AfficheursRobot.o datas/Position.o datas/Plot.o datas/Objet.o states/Current_state.o afficheurs/ObsAfficheurRobot.o
 	$(CXX) $(FLAGS) -o Robot Robot.o AfficheursRobot.o Position.o Plot.o Objet.o Current_state.o
 
 clean:

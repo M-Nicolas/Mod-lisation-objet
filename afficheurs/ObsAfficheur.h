@@ -1,3 +1,6 @@
+#ifndef _OBS_AFFICHEUR_H
+#define _OBS_AFFICHEUR_H
+
 #include <string>
 using namespace std;
 
@@ -8,3 +11,5 @@ public:
 
 	virtual void Afficher(string);
 };
+
+#endif
