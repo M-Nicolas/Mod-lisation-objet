@@ -12,6 +12,7 @@ public:
 	Current_state peser();
 	Current_state poser();
 	Current_state rencontrerPlot();
+	Current_state figer();
 };
 
 //Exception retournée quand le robot ne peux faire une action dans un étât donné

@@ -1,26 +1,22 @@
 #include "AfficheursRobot.h"
 
-AfficheursRobot()
-: _obsAff();
+AfficheursRobot::AfficheursRobot()
+: _obsAff(){}
 
-void notifiers(string str){
+void AfficheursRobot::notifiers(string str){
 	int stop = _obsAff.size();
 	for (int i = 0; i < stop; ++i){
-		_obsAff.afficher(str);
+		_obsAff[i].Afficher(str);
 	} 
 }
 
-void rajouter(ObsAfficheur oa){
-	_obsAff[_obsAff.size() + 1] = oa;
+int AfficheursRobot::rajouter(ObsAfficheur oa){
+	int fin = _obsAff.size() + 1;
+	_obsAff[fin] = oa;
+	return fin;
 }
 
-void enlever(ObsAfficheur oa){
-	int stop = _obsAff.size();
-	for (int i = 0; i < stop; ++i){
-		if (_obsAff[i] == oa){
-			_obsAff.erase(i);
-			return;
-		}
-	}
+void AfficheursRobot::enlever(int i){
+	_obsAff.vector::erase(i);
 }
 

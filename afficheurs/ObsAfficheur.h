@@ -1,8 +1,10 @@
+#include <string>
+using namespace std;
 
 class ObsAfficheur
 {
 public:
 	ObsAfficheur();
 
-	virtual void Afficher();
+	virtual void Afficher(string);
 };

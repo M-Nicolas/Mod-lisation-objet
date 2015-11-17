@@ -94,50 +94,42 @@ void Robot::repartir(){
 	}	
 }
 
-void agit(){
+void Robot::agit(){
 	string command; string direction; char c;int x; int y;
 	cout << "que voulez-vous faire ? " ;
 	while(cin >> command ){
-		case "avancer": 
+		if (command == "avancer"){ 
 			cout << " de quel x y ? " << endl;
 			if(cin >> x >> c >>y)
-				avancer(x, y);
-			break;
-		case "tourner": 
+				Robot::avancer(x, y);
+ 		} else if (command == "tourner"){
 			cout << " quelle direction ?" <<endl;
 			if (cin >> direction)
-				tourner(direction);
-			break;
-		case "saisir": 
-			saisir(Objet(10));
-			break;
-		case "poser": 
-			poser();
-			break;
-		case "peser": 
-			cout << "l'objet pese " << peser() << endl;
-			break;
-		case "rencontrerPlot": 
-			rencontrerPlot(Plot(75));
-			break;
-		case "evaluerPlot": 
-			cout << "le plot mesure " << evaluerPlot() << endl;
-			break;
-		case "figer": 
-			figer();
-			break;
-		case "repartir": 
-			repartir();
-			break;
-		default:
+				Robot::tourner(direction);
+ 		} else if (command == "saisir"){
+			Robot::saisir(Objet(10));
+ 		} else if (command == "poser"){
+			Robot::poser();
+ 		} else if (command == "peser"){
+			cout << "l'objet pese " << Robot::peser() << endl;
+ 		} else if (command == "rencontrerPlot"){
+			Robot::rencontrerPlot(Plot(75));
+ 		} else if (command == "evaluerPlot"){
+			cout << "le plot mesure " << Robot::evaluerPlot() << endl;
+ 		} else if (command == "figer"){
+			Robot::figer();
+ 		} else if (command == "repartir"){ 
+			Robot::repartir();
+ 		}else{
 			cout << "actions possibles: \n avancer" << " tourner" << " saisir"
 				<< " poser" << " peser" << " rencontrerPlot" << " evaluerPlot"
 				<< " figer" << " repartir" << endl;
-		notifiers(command);
+		}
+		AfficheursRobot::notifiers(command);
 	}
 }
 
 int main(int argc, char const *argv[]) {
-	agit();
+	Robot::Robot().agit();
 	return 0;
 }

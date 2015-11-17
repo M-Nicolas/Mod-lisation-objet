@@ -13,6 +13,6 @@ public:
 	AfficheursRobot();
 
 	void notifiers(string);
-	void rajouter(ObsAfficheur);
-	void enlever(ObsAfficheur);
+	int rajouter(ObsAfficheur);
+	void enlever(int);
 };

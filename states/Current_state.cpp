@@ -42,3 +42,7 @@ Current_state Current_state::poser(){
 Current_state Current_state::rencontrerPlot() {
 	throw not_available_method_exception();
 }
+
+Current_state figer() {
+	throw not_available_method_exception();
+}

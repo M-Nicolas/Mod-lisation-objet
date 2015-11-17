@@ -7,10 +7,10 @@ using namespace std;
 #include "datas/Position.h"
 #include "states/Current_state.h"
 
-ObsAfficheurRobot(Robot robot)
+ObsAfficheurRobot::ObsAfficheurRobot(Robot robot)
 : _robot(robot);
 
-void Afficher(){
+void ObsAfficheurRobot::Afficher(){
 	cout << "commande: " << _robot::get_current_state() << endl;
 	cout << "    direction: " << _robot::get_direction() << endl;
 	cout << "    position: x=" << _robot::get_position().getX() << " y=" << _robot::get_position().getY() << endl;
