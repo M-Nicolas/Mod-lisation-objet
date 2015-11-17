@@ -1,2 +1,7 @@
+# quelques fichiers embetants:
 *.vpp~*
 .DS_Store
+
+# resultat de l'execution:
+*.o
+Robot

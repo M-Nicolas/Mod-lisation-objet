@@ -3,12 +3,13 @@
 #include <vector>
 using namespace std;
 
+#include "AfficheursRobot.h"
 #include "datas/Position.h"
 #include "datas/Plot.h"
 #include "datas/Objet.h"
 #include "states/Current_state.h"
 
-class Robot
+class Robot : public AfficheursRobot 
 {
 private:
 	String _direction;
