@@ -1,3 +1,6 @@
+#ifndef _ROBOT_H_
+#define _ROBOT_H_
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -50,3 +53,5 @@ public:
 		return _current_state;
 	}
 };
+
+#endif

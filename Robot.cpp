@@ -11,7 +11,7 @@ void Robot::avancer(int x, int y){
 		_current_state = _current_state.avancer();
 		_position.setX(x);
 		_position.setY(y);
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}
 }
@@ -21,7 +21,7 @@ void Robot::tourner(string direction){
 	try{
 		_current_state = _current_state.tourner(_direction, direction);
 		_direction = direction;
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}
 }
@@ -31,7 +31,7 @@ void Robot::saisir(Objet obj){
 	try{
 		_current_state = _current_state.saisir();
 		_obj = obj;
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}
 }
@@ -41,7 +41,7 @@ void Robot::poser(){
 	try{
 		_current_state = _current_state.poser();
 		_obj = Objet();
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}
 }
@@ -51,7 +51,7 @@ int Robot::peser(){
 	try{
 		_current_state = _current_state.peser();
 		return _obj.getPoids();
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}	
 }
@@ -61,7 +61,7 @@ void Robot::rencontrerPlot(Plot plot){
 	try{
 		_current_state = _current_state.rencontrerPlot();
 		_plot = plot;
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}	
 }
@@ -71,7 +71,7 @@ int Robot::evaluerPlot(){
 	try{
 		_current_state = _current_state.evaluerPlot();
 		return _plot.getHauteur();
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}	
 }
@@ -80,7 +80,7 @@ int Robot::evaluerPlot(){
 void Robot::figer(){
 	try{
 		_current_state = _current_state.figer();
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}	
 }
@@ -89,7 +89,7 @@ void Robot::figer(){
 void Robot::repartir(){
 	try{
 		_current_state = _current_state.repartir();
-	} catch(not_available_method_exception e) {
+	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}	
 }

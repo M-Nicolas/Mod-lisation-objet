@@ -10,9 +10,18 @@ CXX_COMPILE = $(CXX) $(FLAGS) $(INCL)
 %.o:	%.cpp
 	$(CXX_COMPILE) -c $*.cpp
 
+afficheurs/%.o:	%.cpp
+	$(CXX_COMPILE) -c $*.cpp
+
+datas/%.o:	%.cpp
+	$(CXX_COMPILE) -c $*.cpp
+
+states/%.o:	%.cpp
+	$(CXX_COMPILE) -c $*.cpp		
+
 Robot: Robot.o AfficheursRobot.o datas/Position.o datas/Plot.o datas/Objet.o states/Current_state.o
-	$(CXX) $(FLAGS) -o Robot Robot.o AfficheursRobot.o datas/Position.o datas/Plot.o datas/Objet.o states/Current_state.o
+	$(CXX) $(FLAGS) -o Robot Robot.o AfficheursRobot.o Position.o Plot.o Objet.o Current_state.o
 
 clean:
-	rm *.o  afficheurs/*.o datas/*.o states/*.o Robot
+	rm *.o Robot
 
