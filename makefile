@@ -1,6 +1,6 @@
 
 
-INCL_DIR = . afficheurs/ datas/ states/
+INCL_DIR = . # afficheurs/ datas/ states/
 INCL = -I$(INCL_DIR) 
 
 CXX = g++

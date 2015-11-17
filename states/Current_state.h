@@ -1,3 +1,6 @@
+#ifndef _CURRENT_STATE_H_
+#define _CURRENT_STATE_H_
+
 #include <string>
 using namespace std;
 
@@ -13,7 +16,9 @@ public:
 	Current_state poser();
 	Current_state rencontrerPlot();
 	Current_state figer();
+
+	//Exception retournée quand le robot ne peux faire une action dans un étât donné
+	class not_available_method_exception{};
 };
 
-//Exception retournée quand le robot ne peux faire une action dans un étât donné
-class not_available_method_exception{};
+#endif
