@@ -17,7 +17,7 @@ Current_state Current_state::avancer(){
 }
 
 //Methode permettant de tourner le robot dans la direction donnée
-Current_state Current_state::tourner(String directionInitiale, String nvelleDirection) {
+Current_state Current_state::tourner(string directionInitiale, string nvelleDirection) {
 	throw not_available_method_exception();
 }
 

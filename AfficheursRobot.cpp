@@ -17,6 +17,6 @@ int AfficheursRobot::rajouter(ObsAfficheur oa){
 }
 
 void AfficheursRobot::enlever(int i){
-	_obsAff.vector::erase(i);
+	_obsAff.erase(_obsAff.begin() + i);
 }
 

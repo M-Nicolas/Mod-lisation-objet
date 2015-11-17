@@ -1,6 +1,6 @@
 #include "datas/Position.h"
 
-Position::Position(int x = 0, int y = 0)
+Position::Position(int x, int y)
 : _x(x), _y(y)
 {}
 
