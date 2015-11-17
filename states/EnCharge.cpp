@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "EnCharge.h"
-#include "EnChargeFacePlot.h"
-#include "Current_state.h"
-#include "EnRoute.h"
+#include "states/EnCharge.h"
+#include "states/EnChargeFacePlot.h"
+#include "states/Current_state.h"
+#include "states/EnRoute.h"
 
 EnCharge::EnCharge() {
 	cout<<"Creation"<<endl;

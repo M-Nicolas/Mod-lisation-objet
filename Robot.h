@@ -1,5 +1,5 @@
 #include <iostream>
-#include <String>
+#include <string>
 #include <vector>
 using namespace std;
 
@@ -12,7 +12,7 @@ using namespace std;
 class Robot : public AfficheursRobot 
 {
 private:
-	String _direction;
+	string _direction;
 	Position _position;
 	Plot _plot;
 	Objet _obj;
@@ -23,7 +23,7 @@ public:
 	~Robot();
 
 	void avancer(int, int);
-	void tourner(String);
+	void tourner(string);
 	void saisir(Objet);
 	void poser();
 	int peser();
@@ -32,9 +32,9 @@ public:
 	void figer();
 	void repartir();
 	
-	void agit()
+	void agit();
 
-	String get_direction(){
+	string get_direction(){
 		return _direction;
 	}
 	Position get_position(){

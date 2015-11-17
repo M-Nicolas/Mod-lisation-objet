@@ -1,3 +1,5 @@
+#include "datas/Plot.h"
+
 Plot::Plot(int hauteur = 0)
 : _hauteur(hauteur)
 {}

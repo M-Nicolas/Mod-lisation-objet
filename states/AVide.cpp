@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "Current_state.h"
-#include "AVide.h"
-#include "AVideFacePlot.h"
-#include "EnRoute.h"
+#include "states/Current_state.h"
+#include "states/AVide.h"
+#include "states/AVideFacePlot.h"
+#include "states/EnRoute.h"
 
 AVide::AVide() {
 	cout<<"Creation"<<endl;

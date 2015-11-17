@@ -1,4 +1,4 @@
-#include "ObsAfficheur.h"
+#include "datas/ObsAfficheur.h"
 #include "Robot.h"
 
 class ObsAfficheurRobot : public ObsAfficheur {

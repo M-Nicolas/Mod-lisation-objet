@@ -2,7 +2,7 @@
 
 //classe du Robot 
 Robot::Robot()
-: _direction('N'), _position(), _plot(), _obj(), _current_state();
+: _direction("N"), _position(), _plot(), _obj(), _current_state(){}
 
 
 //Méthode permettant au robot d'avancer : modifie ses parametres de Position
@@ -17,7 +17,7 @@ void Robot::avancer(int x, int y){
 }
 
 // Méthode permettant au robot de tourner : modifie sa direction
-void Robot::tourner(String direction){
+void Robot::tourner(string direction){
 	try{
 		_current_state = _current_state.tourner(_direction, direction);
 		_direction = direction;
