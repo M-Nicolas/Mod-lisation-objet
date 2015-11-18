@@ -5,6 +5,7 @@
 #include "EnChargeFacePlot.h"
 #include "AVide.h"
 #include "EnRoute.h"
+#include "Objet.h"
 
 AVideFacePlot::AVideFacePlot() {
 	cout<<"Creation"<<endl;
@@ -29,6 +30,6 @@ Current_state* AVideFacePlot::tourner(string directionInitiale, string nvelledir
 		return Instance();
 }
 
-Current_state* AVideFacePlot::evaluerPlot(Object obj) {
+Current_state* AVideFacePlot::evaluerPlot(Objet obj) {
 	return Instance();
 }
