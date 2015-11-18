@@ -1,6 +1,9 @@
 #ifndef SINGLETON_H
 #define SINGLETON_H
 
+#include <ostream>
+using namespace std;
+
 #include "states/Current_state.h"
 
 //classe Fige qui correspont a l'etat fige du Robot
@@ -8,14 +11,14 @@ class Fige : public Current_state{
 private:
 	Current_state _previous_state;
 	static Fige m_instance;
-	Fige(Current_state = NULL);
-	~Fige();
+	Fige();
 public:
-	static Fige& Instance();
-	Current_state repartir();
-	ostream& operator<<(osteam& is) {
-		return  is << "Fige";
-	}
+	~Fige();
+
+	static Fige Instance();
+	Current_state repartir(Current_state);
+
+	friend ostream& operator<<(ostream&, Current_state&);
 };
 
 #endif

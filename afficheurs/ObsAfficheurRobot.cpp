@@ -22,5 +22,6 @@ void ObsAfficheurRobot::Afficher(string commande){
 		cout << "    objet: " << _robot->get_objet().getPoids() << endl;
 	else
 		cout << "    pas d'objet' " << endl;
-	cout << "    etat courant: " << _robot->get_current_state() << endl;
+	Current_state cs = _robot->get_current_state();
+	cout << "    etat courant: " << cs << endl;
 }

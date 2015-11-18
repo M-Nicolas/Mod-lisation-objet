@@ -22,7 +22,7 @@ Current_state Current_state::tourner(string directionInitiale, string nvelleDire
 }
 
 //Methode qui permet au robot de repartir lorsqu'il est fige
-Current_state Current_state::repartir() {
+Current_state Current_state::repartir(Current_state) {
 	throw Current_state::not_available_method_exception();
 }
 
@@ -43,6 +43,10 @@ Current_state Current_state::rencontrerPlot() {
 	throw Current_state::not_available_method_exception();
 }
 
-Current_state figer() {
+Current_state Current_state::figer() {
 	throw Current_state::not_available_method_exception();
+}
+
+ostream& operator<<(ostream& is, Current_state& cs){
+	return is << "Current_state" ;
 }

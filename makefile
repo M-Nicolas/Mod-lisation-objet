@@ -19,8 +19,22 @@ datas/%.o:	%.cpp
 states/%.o:	%.cpp
 	$(CXX_COMPILE) -c $*.cpp		
 
-Robot: Robot.o AfficheursRobot.o datas/Position.o datas/Plot.o datas/Objet.o states/Current_state.o afficheurs/ObsAfficheurRobot.o
+states/AVide.o: states/Current_state.o states/EnRoute.o states/AVideFacePlot.h
+
+states/AVideFacePlot.o: states/Current_state.o states/EnRoute.o states/EnChargeFacePlot.o states/AVide.o
+
+states/EnCharge.o: states/Current_state.o states/EnRoute.o states/EnChargeFacePlot.o
+
+states/EnChargeFacePlot.o: states/Current_state.o states/EnRoute.o states/AVideFacePlot.o states/EnCharge.o
+
+states/Fige.o: states/Current_state.o
+
+states/EnRoute.o: states/Current_state.o states/Fige.o
+
+#Robot.o AfficheursRobot.o datas/Position.o datas/Plot.o datas/Objet.o states/Current_state.o afficheurs/ObsAfficheurRobot.o
+Robot: states/*.o datas/*.o afficheurs/*.o *.o
 	$(CXX) $(FLAGS) -o Robot Robot.o AfficheursRobot.o Position.o Plot.o Objet.o Current_state.o
+
 
 clean:
 	rm *.o Robot

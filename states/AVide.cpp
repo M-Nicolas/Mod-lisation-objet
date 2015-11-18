@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 #include "states/Current_state.h"
 #include "states/AVide.h"
@@ -14,20 +15,21 @@ AVide::~AVide() {
 }
 
 AVide AVide::Instance() {
-	if (m_instance == NULL)
-		m_instance = new AVide();
-
 	return m_instance;
 }
 
 Current_state AVide::avancer(){
-	return this;
+	return Instance();
 }
 
-Current_state AVide::tourner(String directionInitiale, String nvelledirection) {
-	return this;
+Current_state AVide::tourner(string directionInitiale, string nvelledirection) {
+	return Instance();
 }
 
 Current_state AVide::rencontrerPlot() {
 	return AVideFacePlot::Instance();
+}
+
+ostream& operator<<(ostream& is, Current_state& cs){
+	return is << "AVide";
 }

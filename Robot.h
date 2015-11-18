@@ -20,10 +20,10 @@ private:
 	Plot _plot;
 	Objet _obj;
 	Current_state _current_state;
+	Current_state _previous_state;
 
 public:
 	Robot();
-	~Robot();
 
 	void avancer(int, int);
 	void tourner(string);

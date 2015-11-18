@@ -80,6 +80,7 @@ int Robot::evaluerPlot(){
 // méthode permettant de mettre en pause le robot
 void Robot::figer(){
 	try{
+		_previous_state = _current_state;
 		_current_state = _current_state.figer();
 	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
@@ -89,7 +90,7 @@ void Robot::figer(){
 // méthode permettant au robot figé de repartir
 void Robot::repartir(){
 	try{
-		_current_state = _current_state.repartir();
+		_current_state = _current_state.repartir(_previous_state);
 	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}	

@@ -15,10 +15,6 @@ AVideFacePlot::~AVideFacePlot() {
 }
 
 AVideFacePlot AVideFacePlot::Instance() {
-	if (m_instance == NULL) {
-		m_instance = new AVideFacePlot();
-	}
-
 	return m_instance;
 }
 
