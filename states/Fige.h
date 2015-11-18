@@ -9,7 +9,7 @@ using namespace std;
 //classe Fige qui correspont a l'etat fige du Robot
 class Fige : public Current_state{
 private:
-	static Fige* m_instance;
+	static Fige m_instance;
 	Fige();
 public:
 	~Fige();
