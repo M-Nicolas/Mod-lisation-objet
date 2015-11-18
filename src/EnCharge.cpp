@@ -12,7 +12,7 @@ EnCharge::~EnCharge() {
 	//cout << "Destruction" << endl;
 }
 
-static EnCharge *EnCharge::Instance() {
+EnCharge *EnCharge::Instance() {
 	if (NULL == m_instance) {
 		m_instance = new EnCharge;
 	}

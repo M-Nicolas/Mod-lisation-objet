@@ -1,7 +1,7 @@
 #include <string>
 
-#include "AVideFacePlot.h"
 #include "Current_state.h"
+#include "AVideFacePlot.h"
 #include "EnChargeFacePlot.h"
 #include "AVide.h"
 #include "EnRoute.h"
@@ -15,7 +15,7 @@ AVideFacePlot::~AVideFacePlot() {
 	cout<<"Destruction"<<endl;
 }
 
-static AVideFacePlot* AVideFacePlot::Instance() {
+AVideFacePlot* AVideFacePlot::Instance() {
 	if (NULL == m_instance) {
 		m_instance = new AVideFacePlot;
 	}
