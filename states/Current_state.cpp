@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-#include "states/Current_state.h"
-#include "states/EnRoute.h"
+#include "Current_state.h"
+#include "EnRoute.h"
 
 //definition des methodes de la classe Current_state
 

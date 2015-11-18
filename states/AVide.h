@@ -5,8 +5,8 @@
 #include <string>
 using namespace std;
 
-#include "states/Current_state.h"
-#include "states/EnRoute.h"
+#include "Current_state.h"
+#include "EnRoute.h"
 
 //Classe aVide qui correspont à l'etat du Robot lorsqu'il ne porte pas d'objet et qu'il ne se trouve pas face à un Plot
 class AVide : public EnRoute{

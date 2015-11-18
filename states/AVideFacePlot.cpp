@@ -1,9 +1,9 @@
 
-#include "states/Current_state.h"
-#include "states/AVideFacePlot.h"
-#include "states/EnChargeFacePlot.h"
-#include "states/AVide.h"
-#include "states/EnRoute.h"
+#include "Current_state.h"
+#include "AVideFacePlot.h"
+#include "EnChargeFacePlot.h"
+#include "AVide.h"
+#include "EnRoute.h"
 
 AVideFacePlot::AVideFacePlot() {
 	cout<<"Creation"<<endl;

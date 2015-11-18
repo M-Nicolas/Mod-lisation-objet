@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "states/Current_state.h"
-#include "states/EnChargeFacePlot.h"
-#include "states/AVideFacePlot.h"
-#include "states/EnCharge.h"
-#include "states/EnRoute.h"
+#include "Current_state.h"
+#include "EnChargeFacePlot.h"
+#include "AVideFacePlot.h"
+#include "EnCharge.h"
+#include "EnRoute.h"
 
 EnChargeFacePlot::EnChargeFacePlot() {
 	//cout<<"Creation"<<endl;

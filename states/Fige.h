@@ -4,7 +4,7 @@
 #include <ostream>
 using namespace std;
 
-#include "states/Current_state.h"
+#include "Current_state.h"
 
 //classe Fige qui correspont a l'etat fige du Robot
 class Fige : public Current_state{

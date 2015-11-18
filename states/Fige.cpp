@@ -1,5 +1,5 @@
-#import "states/Fige.h"
-#import "states/Current_state.h"
+#import "Fige.h"
+#import "Current_state.h"
 
 Fige::Fige () {
 	// cout << "Creation" << endl;

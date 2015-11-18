@@ -1,6 +1,6 @@
-#include "states/Enroute.h"
-#include "states/Current_state.h"
-#include "states/Fige.h"
+#include "Enroute.h"
+#include "Current_state.h"
+#include "Fige.h"
 
 Current_state *EnRoute::figer() {
 	return Fige::Instance();
