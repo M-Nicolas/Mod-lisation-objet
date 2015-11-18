@@ -19,7 +19,7 @@ public:
 	Current_state *tourner(string directionInitiale, string nvelleDirection);
 	Current_state *evaluerPlot();
 	Current_state *peser();
-	ostream& operator<<(osteam& is) {
+	ostream& operator<<(ostream& is) {
 		return is << "EnChargeFacePlot";
 	}
 };

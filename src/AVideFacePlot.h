@@ -20,7 +20,7 @@ public:
 	Current_state* saisir();
 	Current_state* tourner(string directionInitiale, string nvelleDirection);
 	Current_state* evaluerPlot();
-	ostream& operator<<(osteam& is) {
+	ostream& operator<<(ostream& is) {
 		return is << "AVideFacePlot";
 	}
 };
