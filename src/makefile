@@ -9,7 +9,7 @@ CXX_COMPILE = $(CXX) $(FLAGS) $(INCL)
 	$(CXX_COMPILE) -c $*.cpp
 
 all: *.o
-	g++ -g -Wall -std=c++11 -o main *.cpp
+	$(CXX_COMPILE) -o main *.o
 
 clean:
 	rm *.o main
