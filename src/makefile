@@ -12,5 +12,5 @@ all: *.o
 	g++ -g -Wall -std=c++11 -o main *.cpp
 
 clean:
-	rm *.o Robot
+	rm *.o main
 

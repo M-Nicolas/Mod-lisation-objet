@@ -1,5 +1,5 @@
-#ifndef _POSITION_
-#define _POSITION_
+#ifndef _POSITION_H_
+#define _POSITION_H_
 
 /*
 Décrit une position sur un plan 

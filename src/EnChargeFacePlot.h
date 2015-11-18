@@ -1,5 +1,5 @@
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef ENCHARGEFACEPLOT_H_
+#define ENCHARGEFACEPLOT_H_
 
 #include <iostream>
 #include <string>

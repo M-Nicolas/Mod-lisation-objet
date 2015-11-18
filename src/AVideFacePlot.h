@@ -1,5 +1,5 @@
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef AVIDEFACEPLOT_H_
+#define AVIDEFACEPLOT_H_
 
 #include <iostream>
 #include <string>

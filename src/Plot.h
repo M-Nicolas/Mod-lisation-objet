@@ -1,5 +1,5 @@
-#ifndef _PLOT_
-#define _PLOT_
+#ifndef _PLOT_H_
+#define _PLOT_H_
 
 class Plot
 {

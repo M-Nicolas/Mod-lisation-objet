@@ -1,5 +1,5 @@
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef _FIGE_H_
+#define _FIGE_H_
 
 #include <ostream>
 using namespace std;

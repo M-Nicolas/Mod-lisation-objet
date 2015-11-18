@@ -1,5 +1,5 @@
-#ifndef SINGLETON_H
-#define SINGLETON_H
+#ifndef ENCHARGE_H_
+#define ENCHARGE_H_
 
 #include <iostream>
 #include <string>
