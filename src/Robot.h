@@ -19,8 +19,8 @@ private:
 	Position _position;
 	Plot _plot;
 	Objet _obj;
-	Current_state _current_state;
-	Current_state _previous_state;
+	Current_state* _current_state;
+	Current_state* _previous_state;
 
 public:
 	Robot();
@@ -49,7 +49,7 @@ public:
 	Objet get_objet(){
 		return _obj;
 	}
-	Current_state get_current_state(){
+	Current_state* get_current_state(){
 		return _current_state;
 	}
 };

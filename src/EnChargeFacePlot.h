@@ -14,7 +14,7 @@ private:
 	EnChargeFacePlot();
 	~EnChargeFacePlot();
 public:
-	static EnChargeFacePlot& Instance(); 
+	static EnChargeFacePlot* Instance(); 
 	Current_state *poser();
 	Current_state *tourner(string directionInitiale, string nvelleDirection);
 	Current_state *evaluerPlot();

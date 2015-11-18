@@ -15,7 +15,7 @@ EnChargeFacePlot::~EnChargeFacePlot() {
 	//cout<<"Destruction"<<endl;
 }
 
-Fige *EnChargeFacePlot::Instance() {
+EnChargeFacePlot* EnChargeFacePlot::Instance() {
 	/*if (m_instance == NULL)
 		m_instance = new EnChargeFacePlot();
 	*/
