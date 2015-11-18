@@ -12,7 +12,6 @@ private:
 
 public:
 	Position(int = 0, int = 0);
-	~Position();
 
 	void setX(int);
 	void setY(int);

@@ -16,7 +16,7 @@ AVide::~AVide() {
 
 AVide* AVide::Instance() {
 	if (NULL == m_instance){
-		m_instance = new Avide;
+		m_instance = new AVide;
 	}
 	return m_instance;
 }
