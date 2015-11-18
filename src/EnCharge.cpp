@@ -13,7 +13,10 @@ EnCharge::~EnCharge() {
 }
 
 EnCharge *EnCharge::Instance() {
-	return &m_instance;
+	if (NULL == m_instance) {
+		m_instance = new EnCharge;
+	}
+	return m_instance;
 }
 
 Current_state *EnCharge::avancer(){

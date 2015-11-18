@@ -16,10 +16,10 @@ EnChargeFacePlot::~EnChargeFacePlot() {
 }
 
 EnChargeFacePlot* EnChargeFacePlot::Instance() {
-	/*if (m_instance == NULL)
-		m_instance = new EnChargeFacePlot();
-	*/
-	return &m_instance;
+	if (NULL == m_instance) {
+		m_instance = new EnChargeFacePlot;
+	}
+	return m_instance;
 }
 
 Current_state *EnChargeFacePlot::poser() {

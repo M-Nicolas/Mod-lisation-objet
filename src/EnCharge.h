@@ -11,7 +11,7 @@ using namespace std;
 //Classe EnChargequi correspont à l'etat du Robot lorsqu'il ne porte un objet et qu'il ne se trouve pas face à un Plot
 class EnCharge : public EnRoute {
 private:
-	static EnCharge m_instance;
+	static EnCharge *m_instance;
     EnCharge();
     ~EnCharge();
 

@@ -15,7 +15,10 @@ AVide::~AVide() {
 }
 
 AVide* AVide::Instance() {
-	return &m_instance;
+	if (NULL == m_instance){
+		m_instance = new Avide;
+	}
+	return m_instance;
 }
 
 Current_state* AVide::avancer(){

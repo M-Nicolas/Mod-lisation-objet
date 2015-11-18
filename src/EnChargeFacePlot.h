@@ -10,7 +10,7 @@
 //Classe EnChargeFacePlot qui correspont à l'etat du Robot lorsqu'il porte un objet et qu'il se trouve face à un Plot
 class EnChargeFacePlot : public EnRoute {
 private:
-	static EnChargeFacePlot m_instance;
+	static EnChargeFacePlot *m_instance;
 	EnChargeFacePlot();
 	~EnChargeFacePlot();
 public:

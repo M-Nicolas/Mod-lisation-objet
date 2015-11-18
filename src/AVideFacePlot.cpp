@@ -16,7 +16,11 @@ AVideFacePlot::~AVideFacePlot() {
 }
 
 AVideFacePlot* AVideFacePlot::Instance() {
-	return &m_instance;
+	if (NULL == m_instance) {
+		m_instance = new AVideFacePlot;
+	}
+
+	return m_instance;
 }
 
 Current_state* AVideFacePlot::saisir(){
