@@ -2,6 +2,7 @@
 #define SINGLETON_H
 
 #include <iostream>
+#include <string>
 
 #include "Current_state.h"
 #include "EnRoute.h"
@@ -15,7 +16,7 @@ private:
 public:
 	static EnChargeFacePlot& Instance(); 
 	Current_state *poser();
-	Current_state *tourner(String directionInitiale, String nvelleDirection);
+	Current_state *tourner(string directionInitiale, string nvelleDirection);
 	Current_state *evaluerPlot();
 	Current_state *peser();
 	ostream& operator<<(osteam& is) {

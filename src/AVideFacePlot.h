@@ -18,7 +18,7 @@ private:
 public:
 	static AVideFacePlot* Instance();
 	Current_state* saisir();
-	Current_state* tourner(String directionInitiale, String nvelleDirection);
+	Current_state* tourner(string directionInitiale, string nvelleDirection);
 	Current_state* evaluerPlot();
 	ostream& operator<<(osteam& is) {
 		return is << "AVideFacePlot";

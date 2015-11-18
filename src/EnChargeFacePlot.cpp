@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 #include "Current_state.h"
 #include "EnChargeFacePlot.h"
@@ -25,7 +26,7 @@ Current_state *EnChargeFacePlot::poser() {
 	return AVideFacePlot::Instance();
 }
 
-Current_state *EnChargeFacePlot::tourner(String directionInitiale, String nvelleDirection){
+Current_state *EnChargeFacePlot::tourner(string directionInitiale, string nvelleDirection){
 	if (directionInitiale <> nvelleDirection)
 		return EnCharge::Instance();
 	else

@@ -1,3 +1,4 @@
+#include <string>
 
 #include "Current_state.h"
 #include "AVideFacePlot.h"
