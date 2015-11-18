@@ -2,6 +2,8 @@
 #define SINGLETON_H
 
 #include <iostream>
+#include <string>
+using namespace std;
 
 #include "states/Current_state.h"
 #include "states/EnRoute.h"
@@ -14,12 +16,12 @@ private:
     ~EnCharge();
 
 public:
-	static EnCharge& Instance();
+	static EnCharge Instance();
 	Current_state avancer();
-	Current_state tourner(String directionInitiale, String nvelleDirection);
+	Current_state tourner(string directionInitiale, string nvelleDirection);
 	Current_state rencontrerPlot();
 	Current_state peser();
-	ostream& operator<<(osteam& is) {
+	ostream& operator<<(ostream& is) {
 		return is << "EnCharge";
 	}
 

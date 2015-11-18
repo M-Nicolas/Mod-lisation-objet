@@ -2,6 +2,8 @@
 #define SINGLETON_H
 
 #include <iostream>
+#include <string>
+using namespace std;
 
 #include "states/Current_state.h"
 #include "states/EnRoute.h"

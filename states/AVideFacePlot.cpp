@@ -1,4 +1,3 @@
-#include <iostream>
 
 #include "states/Current_state.h"
 #include "states/AVideFacePlot.h"
@@ -22,7 +21,7 @@ Current_state AVideFacePlot::saisir(){
 	return EnChargeFacePlot::Instance();
 }
 
-Current_state AVideFacePlot::tourner(String directionInitiale, String nvelledirection) {
+Current_state AVideFacePlot::tourner(string directionInitiale, string nvelledirection) {
 	if (directionInitiale <> nvelledirection)
 		return Avide::Instance();
 	else

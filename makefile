@@ -17,9 +17,9 @@ datas/%.o:	%.cpp
 	$(CXX_COMPILE) -c $*.cpp
 
 states/%.o:	%.cpp
-	$(CXX_COMPILE) -c $*.cpp		
+	$(CXX_COMPILE) -c $*.cpp
 
-states/AVide.o: states/Current_state.o states/EnRoute.o states/AVideFacePlot.h
+states/AVide.o: states/Current_state.o states/EnRoute.o states/AVideFacePlot.o
 
 states/AVideFacePlot.o: states/Current_state.o states/EnRoute.o states/EnChargeFacePlot.o states/AVide.o
 
