@@ -7,26 +7,26 @@ using namespace std;
 #include "EnRoute.h"
 
 AVide::AVide() {
-	cout<<"Creation"<<endl;
+	//cout<<"Creation"<<endl;
 }
 
 AVide::~AVide() {
-	cout<<"Destruction"<<endl;
+	//cout<<"Destruction"<<endl;
 }
 
-AVide AVide::Instance() {
-	return m_instance;
+AVide* AVide::Instance() {
+	return &m_instance;
 }
 
-Current_state AVide::avancer(){
+Current_state* AVide::avancer(){
 	return Instance();
 }
 
-Current_state AVide::tourner(string directionInitiale, string nvelledirection) {
+Current_state* AVide::tourner(string directionInitiale, string nvelledirection) {
 	return Instance();
 }
 
-Current_state AVide::rencontrerPlot() {
+Current_state* AVide::rencontrerPlot() {
 	return AVideFacePlot::Instance();
 }
 

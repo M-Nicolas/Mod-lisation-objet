@@ -5,7 +5,7 @@
 
 class EnRoute : public Current_state {
 public:
-	Current_state figer();
+	Current_state *figer();
 };
 
 #endif

@@ -9,14 +9,13 @@ using namespace std;
 //classe Fige qui correspont a l'etat fige du Robot
 class Fige : public Current_state{
 private:
-	Current_state _previous_state;
-	static Fige m_instance;
+	static Fige* m_instance;
 	Fige();
 public:
 	~Fige();
 
-	static Fige Instance();
-	Current_state repartir(Current_state);
+	static Fige* Instance();
+	Current_state* repartir(Current_state);
 
 	friend ostream& operator<<(ostream&, Current_state&);
 };

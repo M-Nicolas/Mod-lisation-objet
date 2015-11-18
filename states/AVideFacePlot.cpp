@@ -13,21 +13,21 @@ AVideFacePlot::~AVideFacePlot() {
 	cout<<"Destruction"<<endl;
 }
 
-AVideFacePlot AVideFacePlot::Instance() {
-	return m_instance;
+AVideFacePlot* AVideFacePlot::Instance() {
+	return &m_instance;
 }
 
-Current_state AVideFacePlot::saisir(){
+Current_state* AVideFacePlot::saisir(){
 	return EnChargeFacePlot::Instance();
 }
 
-Current_state AVideFacePlot::tourner(string directionInitiale, string nvelledirection) {
+Current_state* AVideFacePlot::tourner(string directionInitiale, string nvelledirection) {
 	if (directionInitiale <> nvelledirection)
 		return Avide::Instance();
 	else
-		return this;
+		return Instance();
 }
 
-Current_state AVideFacePlot::evaluerPlot(Object obj) {
-	return this;
+Current_state* AVideFacePlot::evaluerPlot(Object obj) {
+	return Instance();
 }

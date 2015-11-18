@@ -5,29 +5,29 @@
 using namespace std;
 
 EnCharge::EnCharge() {
-	cout << "Creation" << endl;
+	//cout << "Creation" << endl;
 }
 
 EnCharge::~EnCharge() {
-	cout << "Destruction" << endl;
+	//cout << "Destruction" << endl;
 }
 
-EnCharge EnCharge::Instance() {
-	return m_instance;
+EnCharge *EnCharge::Instance() {
+	return &m_instance;
 }
 
-Current_state EnCharge::avancer(){
+Current_state *EnCharge::avancer(){
 	return Instance();
 }
 
-Current_state EnCharge::tourner(string directionInitiale, string nvelleDirection){
+Current_state *EnCharge::tourner(string directionInitiale, string nvelleDirection){
 	return Instance();
 }
 
-Current_state EnCharge::rencontrerPlot(){
+Current_state *EnCharge::rencontrerPlot(){
 	return EnChargeFacePlot::Instance();
 }
 
-Current_state EnCharge::peser(){
+Current_state *EnCharge::peser(){
 	return Instance();
 }
