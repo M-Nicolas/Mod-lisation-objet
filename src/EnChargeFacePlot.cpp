@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-#include "Current_state.h"
 #include "EnChargeFacePlot.h"
+#include "Current_state.h"
 #include "AVideFacePlot.h"
 #include "EnCharge.h"
 #include "EnRoute.h"
@@ -15,7 +15,7 @@ EnChargeFacePlot::~EnChargeFacePlot() {
 	//cout<<"Destruction"<<endl;
 }
 
-EnChargeFacePlot* EnChargeFacePlot::Instance() {
+static EnChargeFacePlot* EnChargeFacePlot::Instance() {
 	if (NULL == m_instance) {
 		m_instance = new EnChargeFacePlot;
 	}

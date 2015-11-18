@@ -9,7 +9,7 @@ Fige::~Fige() {
 	// cout << "Destruction" << endl;
 }
 
-Fige* Fige::Instance() {
+static Fige* Fige::Instance() {
 	if (NULL == m_instance) {
 		m_instance = new Fige;
 	}
