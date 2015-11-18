@@ -15,7 +15,7 @@ public:
 	~Fige();
 
 	static Fige* Instance();
-	Current_state repartir(Current_state);
+	Current_state* repartir(Current_state*);
 
 	friend ostream& operator<<(ostream&, Current_state&);
 };

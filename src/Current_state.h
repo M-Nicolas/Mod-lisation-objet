@@ -10,7 +10,7 @@ public:
 	Current_state *saisir();
 	Current_state *avancer();
 	Current_state *tourner(string directionInitiale, string nvelleDirection);
-	Current_state *repartir(Current_state);
+	Current_state *repartir(Current_state*);
 	Current_state *evaluerPlot();
 	Current_state *peser();
 	Current_state *poser();

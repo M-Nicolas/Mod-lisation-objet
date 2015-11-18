@@ -16,7 +16,7 @@ Fige* Fige::Instance() {
 }
 
 //Methode permettant de relancer le robot lorsqu'il est fige
-Current_state Fige::repartir(Current_state* cs) {
+Current_state* Fige::repartir(Current_state* cs) {
 	return cs;
 }
 
