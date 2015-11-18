@@ -22,7 +22,7 @@ Current_state* Current_state::tourner(string directionInitiale, string nvelleDir
 }
 
 //Methode qui permet au robot de repartir lorsqu'il est fige
-Current_state* Current_state::repartir(Current_state) {
+Current_state* Current_state::repartir(Current_state*) {
 	throw Current_state::not_available_method_exception();
 }
 
