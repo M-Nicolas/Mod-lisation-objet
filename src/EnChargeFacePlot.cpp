@@ -27,7 +27,7 @@ Current_state *EnChargeFacePlot::poser() {
 }
 
 Current_state *EnChargeFacePlot::tourner(string directionInitiale, string nvelleDirection){
-	if (directionInitiale <> nvelleDirection)
+	if (!directionInitiale == nvelleDirection)
 		return EnCharge::Instance();
 	else
 		return Instance();
