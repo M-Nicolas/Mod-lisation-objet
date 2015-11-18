@@ -54,7 +54,8 @@ int Robot::peser(){
 		return _obj.getPoids();
 	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
-	}	
+	}
+	return 0;	
 }
 
 // Méthode permettant au Robot de découvrir le Plot plot
@@ -75,6 +76,7 @@ int Robot::evaluerPlot(){
 	} catch(Current_state::not_available_method_exception e) {
 		cout << "Vous ne pouvez pas faire ça." << endl;
 	}	
+	return 0;
 }
 
 // méthode permettant de mettre en pause le robot
