@@ -24,7 +24,7 @@ Current_state* AVideFacePlot::saisir(){
 }
 
 Current_state* AVideFacePlot::tourner(string directionInitiale, string nvelledirection) {
-	if (!directionInitiale == nvelledirection)
+	if (!directionInitiale.compare(nvelledirection))
 		return AVide::Instance();
 	else
 		return Instance();
