@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-#include "afficheurs/ObsAfficheur.h"
+#include "ObsAfficheur.h"
 #include "Robot.h"
 
 class ObsAfficheurRobot : public ObsAfficheur {

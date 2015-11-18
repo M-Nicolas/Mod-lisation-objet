@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-#include "afficheurs/ObsAfficheur.h"
+#include "ObsAfficheur.h"
 
 class AfficheursRobot
 {

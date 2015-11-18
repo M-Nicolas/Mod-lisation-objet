@@ -1,5 +1,5 @@
 #include "Robot.h"
-#include "afficheurs/ObsAfficheurRobot.h"
+#include "ObsAfficheurRobot.h"
 
 //classe du Robot 
 Robot::Robot()

@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-#include "afficheurs/ObsAfficheurRobot.h"
-#include "datas/Plot.h"
-#include "datas/Objet.h"
-#include "datas/Position.h"
-#include "states/Current_state.h"
+#include "ObsAfficheurRobot.h"
+#include "Plot.h"
+#include "Objet.h"
+#include "Position.h"
+#include "Current_state.h"
 
 ObsAfficheurRobot::ObsAfficheurRobot(Robot* robot)
 : _robot(robot){}
