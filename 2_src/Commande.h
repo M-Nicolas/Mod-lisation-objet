@@ -16,7 +16,12 @@ public:
 	desexectuer(string);
 	reversible();
 
-	static friend void identifie(string cmd);
+	static Commande nouvCmd(string, Invocateur);
+	/*
+	* cmds[cmd].constructeurVirtuel(invocateur);
+	*/
+	Commande constructeurVirtuel(Invocateur);
+	//On vois ça dans chaque classes de CommandeRobot
 };
 
 #endif
