@@ -4,28 +4,33 @@
 #include <string>
 #include <iostream>
 
-#include "Commande.h"
 using namespace std;
+#include "Commande.h"
 
 class Invocateur {
 private:
 	
 public:
+	Invocateur();
+
 	void identifie(){
-		get_Commande().executer();
+		get_Commande()->executer();
 	}
 
-	Commande get_Commande(){
+	Commande* get_Commande(){
 		return Commande::nouvCmd(get_string(), this);
 	}
 
 	int get_int(){
-		return std:readInt();
+		int res;
+		cin >> res;
+		return res;
 	}
 
 	string get_string(){
-		return std:readString();
-	}
+		string res;
+		cin >> res;
+		return res;	}
 };
 
 #endif

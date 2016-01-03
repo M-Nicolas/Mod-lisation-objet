@@ -3,6 +3,7 @@
 
 #include "Commande.h"
 #include "Invocateur.h"
+#include "Robot.h"
 using namespace std;
 
 class CommandeRobot : public Commande
@@ -11,28 +12,32 @@ protected:
 	static Robot _r;
 public:
 	CommandeRobot(Robot r)
-	: _r(r)
-	{}
+	{
+		_r = r;
+	}
+
+	CommandeRobot() = default;
 };
 
-class Avancer : public CommandRobot
+class Avancer : public CommandeRobot
 {
-public:
-	static Avancer _avancer;
+private:
 	int x;
 	int y;
-	Avancer(){}
-	executer(){
+public:
+	static Avancer _avancer;
+	Avancer();
+	void executer(){
 		_r.avancer(x, y);
 		add_to_prec(this);
 	}
-	Commande consrtVirtuel(Invocateur inv){
-		Commande av = new Avancer();
-		av.x = inv.get_int();
-		av.y = inv.get_int();
+	Commande* consrtVirtuel(Invocateur inv){
+		Avancer* av = new Avancer();
+		av->x = inv.get_int();
+		av->y = inv.get_int();
 		return av;
 	}
-	desexecuter(){
+	void desexecuter(){
 		_r.avancer(-x, -y);		
 	}
 };
@@ -40,9 +45,9 @@ public:
 class Tourner : public CommandeRobot {
 private:
 	string _prec_direction;
+	string _direction;
 public:
 	static Tourner _tourner;
-	string _direction;
 	Tourner(){
 		_prec_direction = _r.get_direction();
 	}
@@ -50,31 +55,32 @@ public:
 		_r.tourner(_direction);
 		add_to_prec(this);
 	}
-	Commande constructeurVirtuel(Invocateur inv){
-		Commande tr = new Tourner();
-		tr._direction = inv.get_string();
+	Commande* consrtVirtuel(Invocateur inv){
+		Tourner* tr = new Tourner();
+		tr->_direction = inv.get_string();
 		return tr;
 	}
-	desexecuter(){
+	void desexecuter(){
 		_r.tourner(_prec_direction);		
 	}
 };
 
 class Saisir : public CommandeRobot {
-public:
+private:
 	Objet _obj;
+public:
 	static Saisir _saisir;
 	Saisir(){}
 	void executer(){
-		_r.saisir();
+		_r.saisir(_obj);
 		add_to_prec(this);
 	}
-	Commande constructeurVirtuel(Invocateur inv){
-		Commande sa = new Saisir();
-		sa._obj = new Objet(inv.get_int);
+	Commande* consrtVirtuel(Invocateur inv){
+		Saisir* sa = new Saisir();
+		sa->_obj = Objet(inv.get_int());
 		return sa;
 	}
-	desexecuter(){
+	void desexecuter(){
 		_r.poser();		
 	}
 };
@@ -91,10 +97,10 @@ public:
 		_r.poser();
 		add_to_prec(this);
 	}
-	Commande constructeurVirtuel(Invocateur inv){
+	Commande* consrtVirtuel(Invocateur inv){
 		return new Poser();
 	}
-	desexecuter(){
+	void desexecuter(){
 		_r.saisir(_objPose);		
 	}
 };
@@ -107,7 +113,7 @@ public:
 	void executer(){
 		_r.peser();
 	}
-	Commande constructeurVirtuel(Invocateur inv){
+	Commande* consrtVirtuel(Invocateur inv){
 		return new Peser();
 	}
 };
@@ -121,9 +127,9 @@ public:
 	void executer(){
 		_r.rencontrerPlot(_plot);
 	}
-	Commande constructeurVirtuel(Invocateur inv){
-		Commande rp = new RencontrerPlot();
-		rp._plot = new Plot(inv.get_int());
+	Commande* consrtVirtuel(Invocateur inv){
+		RencontrerPlot* rp = new RencontrerPlot();
+		rp->_plot = Plot(inv.get_int());
 		return rp;
 	}
 };
@@ -136,30 +142,43 @@ public:
 	void executer(){
 		cout << "le plot fait " << _r.evaluerPlot() << endl;
 	}
-	Commande constructeurVirtuel(Invocateur inv){
+	Commande* consrtVirtuel(Invocateur inv){
 		return new EvaluerPlot();
 	}
 };
 
+class Figer : public CommandeRobot {
+private:
+public:
+	static Figer _figer;
+	Figer(){}
+	void executer(){
+		_r.figer();
+		add_to_prec(this);
+	}
+	Commande* consrtVirtuel(Invocateur inv){
+		return new Figer();
+	}
+	void desexecuter(){
+		_r.repartir();		
+	}
+};
 
-
-
-// class Saisir : public CommandeRobot {
-// private:
-// public:
-// 	static Saisir _saisir;
-// 	Saisir(){}
-// 	void executer(){
-// 		_r.saisir();
-// 		add_to_prec(this);
-// 	}
-// 	Commande constructeurVirtuel(Invocateur inv){
-// 		return new Saisir();
-// 	}
-// 	desexecuter(){
-// 		_r.poser();		
-// 	}
-// };
-
+class Repartir : public CommandeRobot {
+private:
+public:
+	static Repartir _repartir;
+	Repartir(){}
+	void executer(){
+		_r.repartir();
+		add_to_prec(this);
+	}
+	Commande* consrtVirtuel(Invocateur inv){
+		return new Repartir();
+	}
+	void desexecuter(){
+		_r.figer();		
+	}
+};
 
 #endif
