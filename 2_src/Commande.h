@@ -41,9 +41,7 @@ private:
 public:
 	Desexecuter();
 	void executer() {
-		vector<string, Commande*> *prec = cmds();
-		Commande *com = prec->back();
-		com->executer();
+		_prec_cmds.back()->executer();
 	}
 
 	Commande* constrVirtuel(Invocateur) {
