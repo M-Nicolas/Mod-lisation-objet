@@ -10,9 +10,12 @@ CXX_COMPILE = $(CXX) $(FLAGS) $(INCL)
 
 main.o: Commande.h CommandeRobot.h *.o
 
+main : main.o
+	$(CXX) -o main main.o
+
 # all: *.o
 # 	$(CXX_COMPILE) -o main *.o
 
 clean:
-	rm *.o main.o
+	rm *.o main
 
