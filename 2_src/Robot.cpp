@@ -87,6 +87,7 @@ void Robot::agit(){
 }
 
 int main(int argc, char const *argv[]) {
-	Robot::Robot().agit();
+	Robot *rob = new Robot();
+	rob->agit();
 	return 0;
 }
