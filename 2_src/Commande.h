@@ -8,13 +8,12 @@ using namespace std;
 
 #include "Invocateur.h"
 
-class Commande
-{
+class Commande {
 protected:
 	static std::vector<string, Commande*> _prec_cmds;
 
 public:
-	Commande();
+	Commande() {};
 
 	void executer(string);
 	void desexectuer(string);
