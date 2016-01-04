@@ -43,6 +43,7 @@ public:
 	:_inv(inv){}
 
 	void executer(){
+		string nom = _inv.get_string();
 		vector<Commande *> v = vector<Commande *>();
 		string mot = _inv.get_string();
 		while(mot != "FINMACRO"){
@@ -50,6 +51,7 @@ public:
 			mot = _inv.get_string();
 		}
 		new MacroCommande(v);
+		// et on doit la register ici
 	}
 	
 	Commande* consrtVirtuel(Invocateur& inv){
@@ -58,6 +60,9 @@ public:
 };
 
 class Appeler : public Commande {
+private:
+	string _nom;
+
 public:
 	static Appeler _appeler;
 

@@ -19,7 +19,7 @@ public:
 	void desexectuer();
 
 	static std::map<string, Commande*>& cmds(){
-		std::map<string, Commande*>* cmds;
+		static std::map<string, Commande*>* cmds;
 		return *cmds;
 	}
 
