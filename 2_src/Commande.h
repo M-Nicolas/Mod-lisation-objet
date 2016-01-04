@@ -10,7 +10,7 @@ using namespace std;
 
 class Commande {
 protected:
-	static std::vector<string, Commande*> _prec_cmds;
+	static std::vector<Commande*> _prec_cmds;
 
 public:
 	Commande() {};
@@ -41,12 +41,13 @@ private:
 public:
 	Desexecuter();
 	void executer() {
-		_prec_cmds.back()->executer();
+		int last = _prec_cmds.size() - 1;
+		_prec_cmds[last]->desexectuer();
+		_prec_cmds.pop_back();
 	}
 
 	Commande* constrVirtuel(Invocateur) {
-		desexecuter = new Desexecuter();
-		return desexecuter; 
+		return new Desexecuter();
 	}
 };
 

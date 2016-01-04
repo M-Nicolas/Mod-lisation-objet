@@ -1,7 +1,6 @@
 #include "Commande.h" 
 #include "CommandeRobot.h" 
 #include "Invocateur.h"
-#include "MacroCommande.h"
 
 int main()
 {
