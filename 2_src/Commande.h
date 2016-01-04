@@ -15,8 +15,8 @@ protected:
 public:
 	Commande() {};
 
-	void executer(string);
-	void desexectuer(string);
+	void executer();
+	void desexectuer();
 
 	static std::map<string, Commande*>& cmds(){
 		std::map<string, Commande*>* cmds;
