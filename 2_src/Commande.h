@@ -35,4 +35,19 @@ public:
 	}
 };
 
+class Desexecuter : Commande {
+private:
+	static Desexecuter desexecuter;
+public:
+	Desexecuter();
+	void executer() {
+		cmds()->back()->executer();
+	}
+
+	Commande *constrVirtuel(Invocateur) {
+		Desexecuter *des = new Desexecuter();
+		return des; 
+	}
+};
+
 #endif
