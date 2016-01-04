@@ -30,10 +30,10 @@ public:
 		add_to_prec(this);
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		Avancer* av = new Avancer();
-		av->x = inv.get_int();
-		av->y = inv.get_int();
+		av->x = inv->get_int();
+		av->y = inv->get_int();
 		return av;
 	}
 
@@ -57,9 +57,9 @@ public:
 		add_to_prec(this);
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		Tourner* tr = new Tourner();
-		tr->_direction = inv.get_string();
+		tr->_direction = inv->get_string();
 		return tr;
 	}
 
@@ -80,9 +80,9 @@ public:
 		add_to_prec(this);
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		Saisir* sa = new Saisir();
-		sa->_obj = Objet(inv.get_int());
+		sa->_obj = Objet(inv->get_int());
 		return sa;
 	}
 
@@ -105,7 +105,7 @@ public:
 		add_to_prec(this);
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		return new Poser();
 	}
 
@@ -124,7 +124,7 @@ public:
 		_r.peser();
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		return new Peser();
 	}
 };
@@ -140,9 +140,9 @@ public:
 		_r.rencontrerPlot(_plot);
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		RencontrerPlot* rp = new RencontrerPlot();
-		rp->_plot = Plot(inv.get_int());
+		rp->_plot = Plot(inv->get_int());
 		return rp;
 	}
 };
@@ -157,7 +157,7 @@ public:
 		cout << "le plot fait " << _r.evaluerPlot() << endl;
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		return new EvaluerPlot();
 	}
 };
@@ -173,7 +173,7 @@ public:
 		add_to_prec(this);
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		return new Figer();
 	}
 
@@ -193,7 +193,7 @@ public:
 		add_to_prec(this);
 	}
 
-	Commande* consrtVirtuel(Invocateur& inv){
+	Commande* consrtVirtuel(Invocateur* inv){
 		return new Repartir();
 	}
 

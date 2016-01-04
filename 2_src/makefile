@@ -8,11 +8,11 @@ CXX_COMPILE = $(CXX) $(FLAGS) $(INCL)
 %.o:	%.cpp
 	$(CXX_COMPILE) -c $*.cpp
 
-main: Commande.h CommandeRobot.h *.o
+main.o: Commande.h CommandeRobot.h *.o
 
 # all: *.o
 # 	$(CXX_COMPILE) -o main *.o
 
 clean:
-	rm *.o main
+	rm *.o main.o
 

@@ -48,7 +48,7 @@ public:
 		_prec_cmds.pop_back();
 	}
 
-	Commande* constrVirtuel(Invocateur) {
+	Commande* constrVirtuel(Invocateur* inv) {
 		return new Desexecuter();
 	}
 };
