@@ -4,25 +4,25 @@ using namespace std;
 
 #include "Invocateur.h"
 
-Invocateur(){}
+Invocateur::Invocateur(){}
 
-Commande *get_Commande(){
+Commande* Invocateur::get_Commande(){
 	return Commande::nouvCmd(get_string(), this);
 }
 
-void identifie(){
+void Invocateur::identifie(){
 	get_Commande()->executer();
 }
 
-int get_int(){
+int Invocateur::get_int(){
 	int res;
 	cin >> res;
 	return res;
 }
 
-string get_string(){
+string Invocateur::get_string(){
 	string res;
 	cin >> res;
 	return res;
 }
-};
+

@@ -6,6 +6,7 @@ using namespace std;
 
 #include "Commande.h"
 
+class Invocateur;
 class Commande;
 
 class Invocateur {

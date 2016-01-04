@@ -8,6 +8,8 @@ using namespace std;
 
 #include "Invocateur.h"
 
+class Invocateur;
+
 class Commande {
 protected:
 	static std::vector<Commande*> _prec_cmds;
@@ -23,11 +25,11 @@ public:
 		return *cmds;
 	}
 
-	static Commande* nouvCmd(string cmd, Invocateur invocateur){
+	static Commande* nouvCmd(string cmd, Invocateur* invocateur){
 		return cmds()[cmd]->constrVirtuel(invocateur);
 	}
 	
-	Commande* constrVirtuel(Invocateur&);
+	Commande* constrVirtuel(Invocateur*);
 	//On vois ça dans chaque classes de CommandeRobot
 
 	static void add_to_prec(Commande* cmd){
