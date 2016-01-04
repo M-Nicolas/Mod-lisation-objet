@@ -11,16 +11,14 @@ class CommandeRobot : public Commande
 protected:
 	static Robot _r;
 public:
-	CommandeRobot(Robot r)
-	{
+	CommandeRobot(Robot r){
 		_r = r;
 	}
 
 	CommandeRobot() = default;
 };
 
-class Avancer : public CommandeRobot
-{
+class Avancer : public CommandeRobot {
 private:
 	int x;
 	int y;
@@ -31,12 +29,14 @@ public:
 		_r.avancer(x, y);
 		add_to_prec(this);
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		Avancer* av = new Avancer();
 		av->x = inv.get_int();
 		av->y = inv.get_int();
 		return av;
 	}
+
 	void desexecuter(){
 		_r.avancer(-x, -y);		
 	}
@@ -51,15 +51,18 @@ public:
 	Tourner(){
 		_prec_direction = _r.get_direction();
 	}
+
 	void executer(){
 		_r.tourner(_direction);
 		add_to_prec(this);
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		Tourner* tr = new Tourner();
 		tr->_direction = inv.get_string();
 		return tr;
 	}
+
 	void desexecuter(){
 		_r.tourner(_prec_direction);		
 	}
@@ -71,15 +74,18 @@ private:
 public:
 	static Saisir _saisir;
 	Saisir(){}
+
 	void executer(){
 		_r.saisir(_obj);
 		add_to_prec(this);
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		Saisir* sa = new Saisir();
 		sa->_obj = Objet(inv.get_int());
 		return sa;
 	}
+
 	void desexecuter(){
 		_r.poser();		
 	}
@@ -93,13 +99,16 @@ public:
 	Poser(){
 		_objPose = _r.get_objet();
 	}
+
 	void executer(){
 		_r.poser();
 		add_to_prec(this);
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		return new Poser();
 	}
+
 	void desexecuter(){
 		_r.saisir(_objPose);		
 	}
@@ -110,9 +119,11 @@ private:
 public:
 	static Peser _peser;
 	Peser(){}
+
 	void executer(){
 		_r.peser();
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		return new Peser();
 	}
@@ -124,9 +135,11 @@ public:
 	static RencontrerPlot _rencontrerPlot;
 	Plot _plot;
 	RencontrerPlot(){}
+
 	void executer(){
 		_r.rencontrerPlot(_plot);
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		RencontrerPlot* rp = new RencontrerPlot();
 		rp->_plot = Plot(inv.get_int());
@@ -139,9 +152,11 @@ private:
 public:
 	static EvaluerPlot _evaluerPlot;
 	EvaluerPlot(){}
+
 	void executer(){
 		cout << "le plot fait " << _r.evaluerPlot() << endl;
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		return new EvaluerPlot();
 	}
@@ -152,13 +167,16 @@ private:
 public:
 	static Figer _figer;
 	Figer(){}
+
 	void executer(){
 		_r.figer();
 		add_to_prec(this);
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		return new Figer();
 	}
+
 	void desexecuter(){
 		_r.repartir();		
 	}
@@ -169,13 +187,16 @@ private:
 public:
 	static Repartir _repartir;
 	Repartir(){}
+
 	void executer(){
 		_r.repartir();
 		add_to_prec(this);
 	}
+
 	Commande* consrtVirtuel(Invocateur inv){
 		return new Repartir();
 	}
+
 	void desexecuter(){
 		_r.figer();		
 	}
