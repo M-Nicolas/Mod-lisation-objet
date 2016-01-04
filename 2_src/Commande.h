@@ -41,12 +41,14 @@ private:
 public:
 	Desexecuter();
 	void executer() {
-		cmds()->back()->executer();
+		vector<string, Commande*> *prec = cmds();
+		Commande *com = prec->back();
+		com->executer();
 	}
 
-	Commande *constrVirtuel(Invocateur) {
-		Desexecuter *des = new Desexecuter();
-		return des; 
+	Commande* constrVirtuel(Invocateur) {
+		desexecuter = new Desexecuter();
+		return desexecuter; 
 	}
 };
 
