@@ -23,7 +23,7 @@ public:
 		add_to_prec(this);
 	}
 	
-	Commande* consrtVirtuel(Invocateur inv){
+	Commande* consrtVirtuel(Invocateur& inv){
 		return new MacroCommande();
 	}
 	
@@ -34,22 +34,26 @@ public:
 };
 
 class DefMacro : public Commande {
+private:
+	Invocateur _inv;
 public:
 	static DefMacro _defMacro;
 
-	DefMacro(){}
+	DefMacro(Invocateur& inv)
+	:_inv(inv){}
 
 	void executer(){
+		vector<Commande *> v = vector<Commande *>();
+		string mot = _inv.get_string();
+		while(mot != "FINMACRO"){
+			v.push_back(_inv.get_Commande(mot));
+			mot = _inv.get_string();
+		}
+		new MacroCommande(v);
 	}
 	
-	Commande* consrtVirtuel(Invocateur inv){
-		vector<Commande *> v = vector<Commande *>();
-		string mot = inv.get_string();
-		while(mot != "FINMACRO"){
-			v.push_back(inv.get_Commande(mot));
-			mot = inv.get_string();
-		}
-		return new DefMacro();
+	Commande* consrtVirtuel(Invocateur& inv){
+		return new DefMacro(inv);
 	}
 };
 
@@ -62,7 +66,7 @@ public:
 	void executer(){
 	}
 	
-	Commande* consrtVirtuel(Invocateur inv){
+	Commande* consrtVirtuel(Invocateur& inv){
 	}
 };
 

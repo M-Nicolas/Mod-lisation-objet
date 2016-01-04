@@ -28,7 +28,7 @@ public:
 		return cmds()[cmd]->constrVirtuel(invocateur);
 	}
 	
-	Commande* constrVirtuel(Invocateur);
+	Commande* constrVirtuel(Invocateur&);
 	//On vois ça dans chaque classes de CommandeRobot
 
 	static void add_to_prec(Commande* cmd){
