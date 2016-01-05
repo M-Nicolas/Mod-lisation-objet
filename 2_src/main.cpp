@@ -1,3 +1,6 @@
+#include <string>
+using namespace std;
+
 #include "Invocateur.h"
 #include "Commande.h" 
 #include "CommandeRobot.h" 
@@ -6,13 +9,11 @@
 int main()
 {
 	bool continu = true;
-	// Invocateur inv = Invocateur();
+	Invocateur inv = Invocateur();
 	Robot r = Robot();
-	// CommandeRobot cr = CommandeRobot(r);
-	r.avancer(1, 1);
+	CommandeRobot cr = CommandeRobot(r);
 	while(continu){
 		cout << "entrer une commande: " << endl;
-		continu = false;
-		// inv.identifie();
+		inv.identifie();
 	}
 }

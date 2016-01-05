@@ -9,7 +9,6 @@ using namespace std;
 #include "Position.h"
 #include "Plot.h"
 #include "Objet.h"
-// #include "Current_state.h"
 
 class Robot 
 {
@@ -18,8 +17,6 @@ private:
 	Position _position;
 	Plot _plot;
 	Objet _obj;
-	// Current_state* _current_state;
-	// Current_state* _previous_state;
 
 public:
 	Robot();
@@ -46,9 +43,6 @@ public:
 	Objet get_objet(){
 		return _obj;
 	}
-	// Current_state* get_current_state(){
-	// 	return _current_state;
-	// }
 };
 
 #endif
