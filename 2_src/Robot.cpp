@@ -1,5 +1,7 @@
 #include "Robot.h"
-#include "ObsAfficheurRobot.h"
+#include "Position.h"
+#include "Plot.h"
+#include "Objet.h"
 
 //classe du Robot 
 Robot::Robot()
@@ -58,47 +60,4 @@ void Robot::figer(){
 // méthode permettant au robot figé de repartir
 void Robot::repartir(){
 	cout << "le robot n'est plus figé" << endl;
-}
-
-void Robot::agit(){
-	int obs = AfficheursRobot::rajouter(ObsAfficheurRobot(this));
-	string command; string direction; char c;int x; int y;
-	cout << "que voulez-vous faire ? " ;
-	while(cin >> command ){
-		if (command == "avancer"){ 
-			cout << " de quel x y ? " << endl;
-			if(cin >> x >> c >>y)
-				Robot::avancer(x, y);
- 		} else if (command == "tourner"){
-			cout << " quelle direction ?" <<endl;
-			if (cin >> direction)
-				Robot::tourner(direction);
- 		} else if (command == "saisir"){
-			Robot::saisir(Objet(10));
- 		} else if (command == "poser"){
-			Robot::poser();
- 		} else if (command == "peser"){
-			cout << "l'objet pese " << Robot::peser() << endl;
- 		} else if (command == "rencontrerPlot"){
-			Robot::rencontrerPlot(Plot(75));
- 		} else if (command == "evaluerPlot"){
-			cout << "le plot mesure " << Robot::evaluerPlot() << endl;
- 		} else if (command == "figer"){
-			Robot::figer();
- 		} else if (command == "repartir"){ 
-			Robot::repartir();
- 		}else{
-			cout << "actions possibles: \n avancer" << " tourner" << " saisir"
-				<< " poser" << " peser" << " rencontrerPlot" << " evaluerPlot"
-				<< " figer" << " repartir" << endl;
-		}
-		AfficheursRobot::notifiers(command);
-	}
-	AfficheursRobot::enlever(obs);
-}
-
-int main(int argc, char const *argv[]) {
-	Robot *rob = new Robot();
-	rob->agit();
-	return 0;
 }

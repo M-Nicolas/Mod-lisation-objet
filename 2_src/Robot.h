@@ -6,13 +6,12 @@
 #include <vector>
 using namespace std;
 
-#include "AfficheursRobot.h"
 #include "Position.h"
 #include "Plot.h"
 #include "Objet.h"
 // #include "Current_state.h"
 
-class Robot : public AfficheursRobot 
+class Robot 
 {
 private:
 	string _direction;
@@ -35,8 +34,6 @@ public:
 	void figer();
 	void repartir();
 	
-	void agit();
-
 	string get_direction(){
 		return _direction;
 	}
